@@ -3,27 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		768ABE9437B9D1C6E88C9E29 /* Pods_My_MMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D513D2A9FB07BA97DA6B0413 /* Pods_My_MMR.framework */; };
 		B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DD270351C7004FC29B /* AppDelegate.swift */; };
 		B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DF270351C7004FC29B /* SceneDelegate.swift */; };
-		B65844E2270351C7004FC29B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844E1270351C7004FC29B /* ViewController.swift */; };
+		B65844E2270351C7004FC29B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844E1270351C7004FC29B /* SearchVC.swift */; };
 		B65844E5270351C7004FC29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65844E3270351C7004FC29B /* Main.storyboard */; };
 		B65844E7270351C7004FC29B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65844E6270351C7004FC29B /* Assets.xcassets */; };
 		B65844EA270351C7004FC29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65844E8270351C7004FC29B /* LaunchScreen.storyboard */; };
+		B65AB77B2705260E001DBE60 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB77A2705260E001DBE60 /* NetworkManager.swift */; };
+		B666E7D927050D6B004181FB /* PlayerMMR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666E7D827050D6B004181FB /* PlayerMMR.swift */; };
+		B666E7DC27051E53004181FB /* MMRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666E7DB27051E53004181FB /* MMRError.swift */; };
+		B6812DAA2705D389007ABF70 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DA92705D389007ABF70 /* Servers.swift */; };
+		B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */; };
+		B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */; };
+		B6CB512F2705EF8900250095 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB512E2705EF8900250095 /* Alert.swift */; };
+		B6CB51342705EFEB00250095 /* MMRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51332705EFEB00250095 /* MMRButton.swift */; };
+		B6CB51392705F04700250095 /* MMRTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51382705F04700250095 /* MMRTitleLabel.swift */; };
+		B6CB513C2705F06700250095 /* MMRBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB513B2705F06700250095 /* MMRBodyLabel.swift */; };
+		B6CB513F2705F0DB00250095 /* MMRAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB513E2705F0DB00250095 /* MMRAlertContainerView.swift */; };
+		B6CB51492705F21200250095 /* VC Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51482705F21200250095 /* VC Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6BCFD6FD2B082456806644CE /* Pods-My MMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.release.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.release.xcconfig"; sourceTree = "<group>"; };
+		818BE81FBD4AB7893129E0C2 /* Pods-My MMR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.debug.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.debug.xcconfig"; sourceTree = "<group>"; };
 		B65844DA270351C7004FC29B /* My MMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My MMR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65844DD270351C7004FC29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B65844DF270351C7004FC29B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B65844E1270351C7004FC29B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B65844E1270351C7004FC29B /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B65844E4270351C7004FC29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B65844E6270351C7004FC29B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65844E9270351C7004FC29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65844EB270351C7004FC29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B65AB77A2705260E001DBE60 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B666E7D827050D6B004181FB /* PlayerMMR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMMR.swift; sourceTree = "<group>"; };
+		B666E7DB27051E53004181FB /* MMRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRError.swift; sourceTree = "<group>"; };
+		B6812DA92705D389007ABF70 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
+		B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTextField.swift; sourceTree = "<group>"; };
+		B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButtonCustomization.swift; sourceTree = "<group>"; };
+		B6CB512E2705EF8900250095 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B6CB51332705EFEB00250095 /* MMRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButton.swift; sourceTree = "<group>"; };
+		B6CB51382705F04700250095 /* MMRTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTitleLabel.swift; sourceTree = "<group>"; };
+		B6CB513B2705F06700250095 /* MMRBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRBodyLabel.swift; sourceTree = "<group>"; };
+		B6CB513E2705F0DB00250095 /* MMRAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRAlertContainerView.swift; sourceTree = "<group>"; };
+		B6CB51482705F21200250095 /* VC Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC Ext.swift"; sourceTree = "<group>"; };
+		D513D2A9FB07BA97DA6B0413 /* Pods_My_MMR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_MMR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768ABE9437B9D1C6E88C9E29 /* Pods_My_MMR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1533B43A4263526A63ABE03D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				818BE81FBD4AB7893129E0C2 /* Pods-My MMR.debug.xcconfig */,
+				6BCFD6FD2B082456806644CE /* Pods-My MMR.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B7F4ADB6438AEE61DE330AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D513D2A9FB07BA97DA6B0413 /* Pods_My_MMR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B65844D1270351C6004FC29B = {
 			isa = PBXGroup;
 			children = (
 				B65844DC270351C7004FC29B /* My MMR */,
 				B65844DB270351C7004FC29B /* Products */,
+				1533B43A4263526A63ABE03D /* Pods */,
+				3B7F4ADB6438AEE61DE330AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +104,131 @@
 		B65844DC270351C7004FC29B /* My MMR */ = {
 			isa = PBXGroup;
 			children = (
-				B65844DD270351C7004FC29B /* AppDelegate.swift */,
-				B65844DF270351C7004FC29B /* SceneDelegate.swift */,
-				B65844E1270351C7004FC29B /* ViewController.swift */,
-				B65844E3270351C7004FC29B /* Main.storyboard */,
-				B65844E6270351C7004FC29B /* Assets.xcassets */,
-				B65844E8270351C7004FC29B /* LaunchScreen.storyboard */,
+				B6812DAC2705D9A5007ABF70 /* UI Customisation */,
+				B6812DA82705D378007ABF70 /* Utilites */,
+				B65AB779270525E7001DBE60 /* NetworkManager */,
+				B666E7D727050D49004181FB /* Models */,
+				B6CB51242705DA9400250095 /* View */,
+				B6CB51252705DA9B00250095 /* Controller */,
+				B6CB51472705F1FA00250095 /* Extensions */,
+				B6CB51452705F15E00250095 /* Support */,
 				B65844EB270351C7004FC29B /* Info.plist */,
 			);
 			path = "My MMR";
+			sourceTree = "<group>";
+		};
+		B65AB779270525E7001DBE60 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B65AB77A2705260E001DBE60 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		B666E7D727050D49004181FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B666E7D827050D6B004181FB /* PlayerMMR.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6812DA82705D378007ABF70 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				B6812DA92705D389007ABF70 /* Servers.swift */,
+				B666E7DB27051E53004181FB /* MMRError.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		B6812DAC2705D9A5007ABF70 /* UI Customisation */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB51372705F02500250095 /* CustomLabel */,
+				B6CB51322705EFCF00250095 /* CustomButton */,
+				B6CB51412705F0FF00250095 /* CustomTF */,
+				B6CB51422705F11E00250095 /* CustomUIView */,
+				B6CB51312705EFB600250095 /* CutomVC */,
+			);
+			path = "UI Customisation";
+			sourceTree = "<group>";
+		};
+		B6CB51242705DA9400250095 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B65844E3270351C7004FC29B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B6CB51252705DA9B00250095 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B65844E1270351C7004FC29B /* SearchVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6CB51312705EFB600250095 /* CutomVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB512E2705EF8900250095 /* Alert.swift */,
+			);
+			name = CutomVC;
+			sourceTree = "<group>";
+		};
+		B6CB51322705EFCF00250095 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */,
+				B6CB51332705EFEB00250095 /* MMRButton.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		B6CB51372705F02500250095 /* CustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB51382705F04700250095 /* MMRTitleLabel.swift */,
+				B6CB513B2705F06700250095 /* MMRBodyLabel.swift */,
+			);
+			name = CustomLabel;
+			sourceTree = "<group>";
+		};
+		B6CB51412705F0FF00250095 /* CustomTF */ = {
+			isa = PBXGroup;
+			children = (
+				B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */,
+			);
+			path = CustomTF;
+			sourceTree = "<group>";
+		};
+		B6CB51422705F11E00250095 /* CustomUIView */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB513E2705F0DB00250095 /* MMRAlertContainerView.swift */,
+			);
+			path = CustomUIView;
+			sourceTree = "<group>";
+		};
+		B6CB51452705F15E00250095 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B65844DD270351C7004FC29B /* AppDelegate.swift */,
+				B65844DF270351C7004FC29B /* SceneDelegate.swift */,
+				B65844E6270351C7004FC29B /* Assets.xcassets */,
+				B65844E8270351C7004FC29B /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B6CB51472705F1FA00250095 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB51482705F21200250095 /* VC Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B65844EE270351C7004FC29B /* Build configuration list for PBXNativeTarget "My MMR" */;
 			buildPhases = (
+				55AC71E860B60CBDEE5933A6 /* [CP] Check Pods Manifest.lock */,
 				B65844D6270351C7004FC29B /* Sources */,
 				B65844D7270351C7004FC29B /* Frameworks */,
 				B65844D8270351C7004FC29B /* Resources */,
+				EF2E00235D7909FC1E43305F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +298,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55AC71E860B60CBDEE5933A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My MMR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF2E00235D7909FC1E43305F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My MMR/Pods-My MMR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My MMR/Pods-My MMR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My MMR/Pods-My MMR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B65844D6270351C7004FC29B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65844E2270351C7004FC29B /* ViewController.swift in Sources */,
+				B65AB77B2705260E001DBE60 /* NetworkManager.swift in Sources */,
+				B65844E2270351C7004FC29B /* SearchVC.swift in Sources */,
+				B6CB51342705EFEB00250095 /* MMRButton.swift in Sources */,
+				B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */,
+				B6CB513F2705F0DB00250095 /* MMRAlertContainerView.swift in Sources */,
+				B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */,
+				B6812DAA2705D389007ABF70 /* Servers.swift in Sources */,
+				B6CB51492705F21200250095 /* VC Ext.swift in Sources */,
 				B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */,
 				B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */,
+				B6CB51392705F04700250095 /* MMRTitleLabel.swift in Sources */,
+				B666E7DC27051E53004181FB /* MMRError.swift in Sources */,
+				B6CB512F2705EF8900250095 /* Alert.swift in Sources */,
+				B666E7D927050D6B004181FB /* PlayerMMR.swift in Sources */,
+				B6CB513C2705F06700250095 /* MMRBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +503,14 @@
 		};
 		B65844EF270351C7004FC29B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 818BE81FBD4AB7893129E0C2 /* Pods-My MMR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5R69Q32RG;
 				INFOPLIST_FILE = "My MMR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +524,14 @@
 		};
 		B65844F0270351C7004FC29B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BCFD6FD2B082456806644CE /* Pods-My MMR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5R69Q32RG;
 				INFOPLIST_FILE = "My MMR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
