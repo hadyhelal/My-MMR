@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		768ABE9437B9D1C6E88C9E29 /* Pods_My_MMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D513D2A9FB07BA97DA6B0413 /* Pods_My_MMR.framework */; };
+		B64C3B4F270B96CB00B32B9A /* UserDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C3B4E270B96CB00B32B9A /* UserDataVC.swift */; };
 		B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DD270351C7004FC29B /* AppDelegate.swift */; };
 		B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DF270351C7004FC29B /* SceneDelegate.swift */; };
 		B65844E2270351C7004FC29B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844E1270351C7004FC29B /* SearchVC.swift */; };
@@ -19,6 +20,7 @@
 		B666E7DC27051E53004181FB /* MMRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666E7DB27051E53004181FB /* MMRError.swift */; };
 		B6812DAA2705D389007ABF70 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DA92705D389007ABF70 /* Servers.swift */; };
 		B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */; };
+		B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68357A0270F50C8000D53E4 /* String + Ext.swift */; };
 		B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */; };
 		B6CB512F2705EF8900250095 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB512E2705EF8900250095 /* Alert.swift */; };
 		B6CB51342705EFEB00250095 /* MMRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51332705EFEB00250095 /* MMRButton.swift */; };
@@ -31,6 +33,7 @@
 /* Begin PBXFileReference section */
 		6BCFD6FD2B082456806644CE /* Pods-My MMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.release.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.release.xcconfig"; sourceTree = "<group>"; };
 		818BE81FBD4AB7893129E0C2 /* Pods-My MMR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.debug.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.debug.xcconfig"; sourceTree = "<group>"; };
+		B64C3B4E270B96CB00B32B9A /* UserDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataVC.swift; sourceTree = "<group>"; };
 		B65844DA270351C7004FC29B /* My MMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My MMR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65844DD270351C7004FC29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B65844DF270351C7004FC29B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		B666E7DB27051E53004181FB /* MMRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRError.swift; sourceTree = "<group>"; };
 		B6812DA92705D389007ABF70 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 		B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTextField.swift; sourceTree = "<group>"; };
+		B68357A0270F50C8000D53E4 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButtonCustomization.swift; sourceTree = "<group>"; };
 		B6CB512E2705EF8900250095 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B6CB51332705EFEB00250095 /* MMRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButton.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				B65844E1270351C7004FC29B /* SearchVC.swift */,
+				B64C3B4E270B96CB00B32B9A /* UserDataVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B6CB51482705F21200250095 /* VC Ext.swift */,
+				B68357A0270F50C8000D53E4 /* String + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,11 +359,13 @@
 				B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */,
 				B6812DAA2705D389007ABF70 /* Servers.swift in Sources */,
 				B6CB51492705F21200250095 /* VC Ext.swift in Sources */,
+				B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */,
 				B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */,
 				B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */,
 				B6CB51392705F04700250095 /* MMRTitleLabel.swift in Sources */,
 				B666E7DC27051E53004181FB /* MMRError.swift in Sources */,
 				B6CB512F2705EF8900250095 /* Alert.swift in Sources */,
+				B64C3B4F270B96CB00B32B9A /* UserDataVC.swift in Sources */,
 				B666E7D927050D6B004181FB /* PlayerMMR.swift in Sources */,
 				B6CB513C2705F06700250095 /* MMRBodyLabel.swift in Sources */,
 			);

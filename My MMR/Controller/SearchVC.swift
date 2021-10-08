@@ -8,10 +8,14 @@
 import UIKit
 import DropDown
 
+protocol doHasUserData {
+    func userData(playerData : PlayerMMR ,playerName : String)
+}
+
 class SearchVC: UIViewController {
     
     var dropDown = DropDown()
-    
+    static var delegate : doHasUserData!
     var playerData : PlayerMMR?
     var chosenServer : String = Servers.eune.rawValue
     
@@ -25,6 +29,7 @@ class SearchVC: UIViewController {
         tapRecognizer()
         configureVCCustomisation()
         textField.delegate = self
+        
         
     }
     
@@ -59,13 +64,33 @@ class SearchVC: UIViewController {
             self.stopLoadingScreen()
             switch result {
             case .success(let playerMMR):
-                print(playerMMR)
+                self.playerData = playerMMR
+                guard let sendPlayerData = self.playerData else { return }
+                DispatchQueue.main.async {
+                    SearchVC.delegate.userData(playerData: sendPlayerData , playerName: self.textField.text!)
+                }
+                print(playerMMR.normal)
             case .failure(let error):
                 self.presentAlertOnMainThread(title: "Something wrong!", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "goToUserDataVC" else {
+//            print("Uh la la")
+//            return
+//        }
+//        
+//        guard let playerDataa = playerData else {
+//            print("Player data is nill")
+//            return
+//        }
+//        
+//        let destinationVC = segue.destination as? UserDataVC
+//        destinationVC?.textToShow = playerDataa.ranked.summary
+//    }
+//    
     func configureVCCustomisation(){
         MMRTextField.configureTF(textField: textField)
         MMRButtonCustomization.configureSearchButton(button: searchButton)
