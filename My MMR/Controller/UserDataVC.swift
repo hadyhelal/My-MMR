@@ -29,15 +29,15 @@ class UserDataVC: UIViewController {
     @IBOutlet weak var aramMMR: UILabel!
     @IBOutlet weak var aramSummary: UILabel!
     
-    var playerData : PlayerMMR!
+    var playerData : SavedFavorites!
     let NotAvailiable = "N/A"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SearchVC.delegate = self
         configureViewControllerUI()
 
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -49,16 +49,24 @@ class UserDataVC: UIViewController {
         rankedView.layer.cornerRadius = 20
         normalView.layer.cornerRadius = 20
         aramView.layer.cornerRadius   = 20
+       
         let barBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtnTapped))
         navigationItem.rightBarButtonItem = barBtn
     }
     
     @objc func addBtnTapped(){
-        self.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
+        persistanceManager.updateFavorites(newPlayer: playerData, actionType: .add) { [weak self] error in
+            guard error == nil else {
+                self?.presentAlertOnMainThread(title: "Error", message: error!.rawValue, buttonTitle: "Ok")
+                return
+            }
+            self?.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
+            
+        }
     }
     
     func configureRankedStatus() {
-        guard let mmr = playerData.ranked.avg , var summary = playerData.ranked.summary else {
+        guard let mmr = playerData.player.ranked.avg , var summary = playerData.player.ranked.summary else {
             rankedMMR.text     = NotAvailiable
             rankedSummary.text = NotAvailiable
             return
@@ -69,7 +77,7 @@ class UserDataVC: UIViewController {
     }
     
     func configureNormalStatus() {
-        guard let mmr = playerData.normal.avg , let currentRank = playerData.normal.closestRank else {
+        guard let mmr = playerData.player.normal.avg , let currentRank = playerData.player.normal.closestRank else {
             normalMMR.text     = NotAvailiable
             normalSummary.text = NotAvailiable
             return
@@ -79,7 +87,7 @@ class UserDataVC: UIViewController {
     }
     
     func configureAramStatus() {
-        guard let mmr = playerData.ARAM.avg , let currentRank = playerData.ARAM.closestRank else {
+        guard let mmr = playerData.player.ARAM.avg , let currentRank = playerData.player.ARAM.closestRank else {
             aramMMR.text     = NotAvailiable
             aramSummary.text = NotAvailiable
             return
@@ -88,25 +96,23 @@ class UserDataVC: UIViewController {
         aramSummary.text     = currentRank
     }
     
-
-    
-    
 }
 
 
 extension UserDataVC : doHasUserData {
-    func userData(playerData: PlayerMMR ,playerName : String) {
+    func userData(playerData: SavedFavorites) {
         self.playerData = playerData
-         
+       // print(playerData.player.ranked.closestRank)
+        let closestRank = playerData.player.ranked.closestRank
         DispatchQueue.main.async {
-            self.title                 = playerName
-            self.currentRank.text      = playerData.ranked.closestRank ?? self.NotAvailiable
-            self.summonerUsername.text = playerName
+            self.RankImage.image       = RankImages.getRankImage(withRank: closestRank ?? self.NotAvailiable)
+            self.currentRank.text      = closestRank ?? self.NotAvailiable
+            self.summonerUsername.text = playerData.summonerName
             self.configureRankedStatus()
             self.configureNormalStatus()
             self.configureAramStatus()
         }
-        print("lollllllllll")
     }
+    
     
 }

@@ -9,6 +9,10 @@ import Foundation
 
 // MARK: - PlayerMMR
 struct PlayerMMR: Codable {
+//    static func == (lhs: PlayerMMR, rhs: PlayerMMR) -> Bool {
+//        return lhs.normal.avg == rhs.normal.avg && lhs.ranked.avg == rhs.ranked.avg
+//    }
+    
     let ranked: Ranked
     let normal : Aram
     let ARAM: Aram
