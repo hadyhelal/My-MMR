@@ -180,5 +180,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5C620D8-DB9F-42DA-9691-3A721C6689BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My MMR/Controller/SearchVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "getSummunorMMR(completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F5C620D8-DB9F-42DA-9691-3A721C6689BD - 88d190ac70ae8d65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_MMR.SearchVC.getSummunorMMR(completed: (Swift.Result&lt;My_MMR.PlayerMMR, My_MMR.MMRError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "My MMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadyhelal/Desktop/My%20MMR/My%20MMR/Controller/SearchVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1182">
+               </Location>
+               <Location
+                  uuid = "F5C620D8-DB9F-42DA-9691-3A721C6689BD - c70367cc56f5151b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;My_MMR.PlayerMMR, My_MMR.MMRError&gt;) -&gt; () in My_MMR.SearchVC.getSummunorMMR(completed: (Swift.Result&lt;My_MMR.PlayerMMR, My_MMR.MMRError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "My MMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadyhelal/Desktop/My%20MMR/My%20MMR/Controller/SearchVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "253">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

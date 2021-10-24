@@ -91,15 +91,15 @@ class SearchVC: UIViewController {
             completed(.failure(.invalidUsername))
             return
         }
-        
-        NetworkManager.shared.getUserData(playerName: summonerName, server: chosenServer) { [weak self] result in
+  
+        AlamoFireManager.shared.getUserData(playerName: summonerName, server: chosenServer) { [weak self] result in
             guard let self = self else { return }
             self.stopLoadingScreen()
-            
+
             switch result {
             case .success(let summonerMMR):
                 completed(.success(summonerMMR))
-                
+
             case .failure(let error):
                 completed(.failure(error))
             }
@@ -128,23 +128,3 @@ extension SearchVC : UITextFieldDelegate {
         
     }
 }
-
-//
-//Connect.league.lolAPI.getSummoner(byName: "HadyHulk", on:.EUNE ) { (summoner, errorMsg) in
-//    if let summoner = summoner {
-//        //Connect.league.lolAPI.rank
-//        Connect.league.lolAPI.getChampionMasteries(by: summoner.id, on: .EUNE) { (championMasteries, errorMsg) in
-//            if let championMasteries = championMasteries {
-//                for mastery in championMasteries {
-//                    print("Mastery\(mastery.championPoints)")
-//                }
-//            }
-//            else {
-//                print("Request failed cause: \(errorMsg ?? "No error description")")
-//            }
-//        }
-//    }
-//    else {
-//        print("Request failed cause: \(errorMsg ?? "No error description")")
-//    }
-//}
