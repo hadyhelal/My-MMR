@@ -35,7 +35,6 @@ class UserDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllerUI()
-
     }
 
     
@@ -66,7 +65,7 @@ class UserDataVC: UIViewController {
     }
     
     func configureRankedStatus() {
-        guard let mmr = playerData.player.ranked.avg , var summary = playerData.player.ranked.summary else {
+        guard let mmr = playerData.player.ranked?.avg , var summary = playerData.player.ranked?.summary else {
             rankedMMR.text     = NotAvailiable
             rankedSummary.text = NotAvailiable
             return
@@ -77,7 +76,7 @@ class UserDataVC: UIViewController {
     }
     
     func configureNormalStatus() {
-        guard let mmr = playerData.player.normal.avg , let currentRank = playerData.player.normal.closestRank else {
+        guard let mmr = playerData.player.normal?.avg , let currentRank = playerData.player.normal?.closestRank else {
             normalMMR.text     = NotAvailiable
             normalSummary.text = NotAvailiable
             return
@@ -87,7 +86,7 @@ class UserDataVC: UIViewController {
     }
     
     func configureAramStatus() {
-        guard let mmr = playerData.player.ARAM.avg , let currentRank = playerData.player.ARAM.closestRank else {
+        guard let mmr = playerData.player.ARAM?.avg , let currentRank = playerData.player.ARAM?.closestRank else {
             aramMMR.text     = NotAvailiable
             aramSummary.text = NotAvailiable
             return
@@ -103,15 +102,18 @@ extension UserDataVC : doHasUserData {
     func userData(playerData: SavedFavorites) {
         self.playerData = playerData
        // print(playerData.player.ranked.closestRank)
-        let closestRank = playerData.player.ranked.closestRank
+        let closestRank = playerData.player.ranked?.closestRank
         DispatchQueue.main.async {
             self.RankImage.image       = RankImages.getRankImage(withRank: closestRank ?? self.NotAvailiable)
             self.currentRank.text      = closestRank ?? self.NotAvailiable
             self.summonerUsername.text = playerData.summonerName
+            self.title                 = playerData.summonerName
             self.configureRankedStatus()
             self.configureNormalStatus()
             self.configureAramStatus()
         }
+        
+        
     }
     
     

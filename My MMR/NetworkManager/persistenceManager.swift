@@ -43,7 +43,7 @@ enum persistanceManager {
             completed(.success([]))
             return
         }
-        print("Favoritessss \(favoritesData)")
+        
         do {
             let decoder = JSONDecoder()
             let decodedFavorites = try decoder.decode([SavedFavorites].self, from: favoritesData)

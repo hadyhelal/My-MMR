@@ -30,7 +30,7 @@ enum RankImages{
             case "C":
                 return RankLogos.challenger!
             case "G":
-                if Array(rank)[1] == "d" { return RankLogos.grandMaster!} else { return RankLogos.gold!}
+                if Array(rank)[1] == "r" { return RankLogos.grandMaster!} else { return RankLogos.gold!}
             default:
                 return RankLogos.unRanked!
                 

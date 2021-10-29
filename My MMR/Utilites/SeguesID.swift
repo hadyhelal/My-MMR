@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
 enum SeguesID {
-    static var toUserDataVC = "toUserData"
+    static var toUserDataVC       = "toUserData"
+    static var toUserFromFavorite = "ToUserDataVC"
 }

@@ -1,3 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-My MMR/Pods-My MMR-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/LeagueAPI/LeagueAPI.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
