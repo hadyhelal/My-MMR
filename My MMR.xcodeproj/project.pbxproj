@@ -28,6 +28,7 @@
 		B6812DAA2705D389007ABF70 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DA92705D389007ABF70 /* Servers.swift */; };
 		B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */; };
 		B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68357A0270F50C8000D53E4 /* String + Ext.swift */; };
+		B69AA4ED27281AD80060B924 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69AA4EC27281AD80060B924 /* SearchButton.swift */; };
 		B6AE8F8B2711249A0028DF92 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE8F8A2711249A0028DF92 /* FavoritesVC.swift */; };
 		B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */; };
 		B6CB512F2705EF8900250095 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB512E2705EF8900250095 /* Alert.swift */; };
@@ -65,6 +66,7 @@
 		B6812DA92705D389007ABF70 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 		B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTextField.swift; sourceTree = "<group>"; };
 		B68357A0270F50C8000D53E4 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		B69AA4EC27281AD80060B924 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		B6AE8F8A2711249A0028DF92 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButtonCustomization.swift; sourceTree = "<group>"; };
 		B6CB512E2705EF8900250095 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */,
 				B6CB51332705EFEB00250095 /* MMRButton.swift */,
+				B69AA4EC27281AD80060B924 /* SearchButton.swift */,
 			);
 			path = CustomButton;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				B6F9CDC52725DC38002A00E7 /* RankImages.swift in Sources */,
 				B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */,
 				B6CB513F2705F0DB00250095 /* MMRAlertContainerView.swift in Sources */,
+				B69AA4ED27281AD80060B924 /* SearchButton.swift in Sources */,
 				B66AC5502712034F00B46F2E /* SeguesID.swift in Sources */,
 				B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */,
 				B669609527125AE10079D021 /* FavoritesCell.swift in Sources */,

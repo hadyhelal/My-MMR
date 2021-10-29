@@ -25,10 +25,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vra-27-dGi">
-                        <rect key="frame" x="84" y="46.5" width="342" height="14"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="I4q-xi-P4x"/>
-                        </constraints>
+                        <rect key="frame" x="84" y="43.5" width="342" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

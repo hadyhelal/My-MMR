@@ -8,10 +8,9 @@
 import Foundation
 import ObjectMapper
 // MARK: - PlayerMMR
-struct PlayerMMR: Codable,Mappable{
-     init?(map: Map){
 
-    }
+struct PlayerMMR: Codable,Mappable{
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         ranked <- map["ranked"]
@@ -20,7 +19,7 @@ struct PlayerMMR: Codable,Mappable{
     }
 
     var ranked: Ranked?
-    var normal : Aram?
+    var normal: Aram?
     var ARAM: Aram?
 }
 
@@ -54,9 +53,7 @@ struct Ranked: Codable ,Mappable{
 
 // MARK: - Aram
 struct Aram: Codable , Mappable{
-     init?(map: Map){
-
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
          avg <- map["avg"]

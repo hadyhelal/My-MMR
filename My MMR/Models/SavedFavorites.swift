@@ -13,7 +13,7 @@ struct SavedFavorites : Codable , Equatable{
         return lhs.summonerName == rhs.summonerName
     }
     
-    let player : PlayerMMR
-    let summonerName : String
-    let server : String
+    let player: PlayerMMR
+    let summonerName: String
+    let server: String
 }

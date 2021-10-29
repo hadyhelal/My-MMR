@@ -25,9 +25,9 @@ class FavoritesCell: UITableViewCell {
 
     }
     
-    func set(favorite : PlayerMMR){
-        summonerNameLabel.text = "holaaa"
-        summonerImage.image    = UIImage(named: "Gold")
+    func set(favorite : SavedFavorites){
+        summonerNameLabel.text = favorite.summonerName
+        summonerImage.image    = RankImages.getRankImage(withRank: favorite.player.ranked?.closestRank ?? "N/A")
     }
     
 }

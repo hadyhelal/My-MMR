@@ -19,12 +19,11 @@ class Alert: UIViewController {
     var messageTitle : String?
     var buttonTitle  : String?
     
-    let padding : CGFloat = 20 //For Constraints
+    let padding : CGFloat = 20
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     init(title : String , message : String , buttonTitel : String){
         super.init(nibName: nil, bundle: nil)
@@ -38,7 +37,6 @@ class Alert: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         
-        
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -47,9 +45,7 @@ class Alert: UIViewController {
     
     
     func configureContainerView(){
-        
         view.addSubview(containerView)
-
         
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),

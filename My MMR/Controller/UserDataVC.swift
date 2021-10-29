@@ -35,7 +35,6 @@ class UserDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllerUI()
-
     }
 
     
@@ -63,7 +62,6 @@ class UserDataVC: UIViewController {
             self?.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
             
         }
-        
     }
     
     func configureRankedStatus() {
@@ -109,6 +107,7 @@ extension UserDataVC : doHasUserData {
             self.RankImage.image       = RankImages.getRankImage(withRank: closestRank ?? self.NotAvailiable)
             self.currentRank.text      = closestRank ?? self.NotAvailiable
             self.summonerUsername.text = playerData.summonerName
+            self.title                 = playerData.summonerName
             self.configureRankedStatus()
             self.configureNormalStatus()
             self.configureAramStatus()

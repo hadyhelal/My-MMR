@@ -19,6 +19,11 @@ extension UIViewController {
         }
     }
     
+    func tapRecognizer(view: UIView){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(view.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
+    
     func showLoadingScreen(){
         contentView = UIView(frame: view.bounds)
         view.addSubview(contentView)

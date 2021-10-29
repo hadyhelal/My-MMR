@@ -8,26 +8,35 @@
 import UIKit
 import DropDown
 import LeagueAPI
+
 protocol doHasUserData {
     func userData(playerData : SavedFavorites)
 }
 
-class SearchVC: UIViewController {
+final class SearchVC: UIViewController {
     
     var dropDown = DropDown()
-    var delegate : doHasUserData?
-    var playerData : PlayerMMR?
-    var chosenServer : String = Region.EUNE.rawValue
+    var delegate: doHasUserData?
+    var playerData: PlayerMMR?
+    var chosenServer: String = Region.EUNE.rawValue
     
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var serverButton: UIButton!
     
+    var summonerName : String {
+        guard let playerName = textField.text?.replacingOccurrences(of: " ", with: "") else {
+            self.stopLoadingScreen()
+            return textField.text!
+        }
+        return playerName
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tapRecognizer()
+        tapRecognizer(view: self.view)
         configureVCCustomisation()
         textField.delegate = self
     }
@@ -64,17 +73,19 @@ class SearchVC: UIViewController {
             switch result{
             case .success(let summonerMMR):
                 self.playerData = summonerMMR
+
+                let playerInfo = SavedFavorites(player: self.playerData!,
+                                                          summonerName: self.summonerName,
+                                                          server: self.chosenServer)
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: SeguesID.toUserDataVC, sender: self)
-                    guard let sendPlayerData = self.playerData else {  return }
-                    let playerInfo = SavedFavorites(player: sendPlayerData, summonerName: self.textField.text!, server: self.chosenServer)
                     self.delegate?.userData(playerData: playerInfo)
                 }
+                
             case .failure(let error):
                 self.presentAlertOnMainThread(title: "Something wrong!", message: error.rawValue, buttonTitle: "Ok")
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,12 +97,6 @@ class SearchVC: UIViewController {
     
     func getSummunorMMR(completed : @escaping (Result<PlayerMMR, MMRError>)-> Void){
         self.showLoadingScreen()
-        guard let summonerName = textField.text?.replacingOccurrences(of: " ", with: "") else {
-            self.stopLoadingScreen()
-            completed(.failure(.invalidUsername))
-            return
-        }
-  
         AlamoFireManager.shared.getUserData(playerName: summonerName, server: chosenServer) { [weak self] result in
             guard let self = self else { return }
             self.stopLoadingScreen()
@@ -112,14 +117,7 @@ class SearchVC: UIViewController {
         MMRButtonCustomization.configureServerButton(button: serverButton)
     }
     
-    func tapRecognizer(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(view.endEditing(_:)))
-        view.addGestureRecognizer(tap)
-    }
-    
-    let x = (5 ,1)
 }
-
 
 extension SearchVC : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

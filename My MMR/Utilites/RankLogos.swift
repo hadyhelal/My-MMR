@@ -8,7 +8,7 @@
 import UIKit
 
 enum RankLogos {
-    static let iron        = UIImage(named: "Iron")
+    static var iron        = UIImage(named: "Iron")
     static let bronze      = UIImage(named: "Bronze")
     static let silver      = UIImage(named: "Silver")
     static let gold        = UIImage(named: "Gold")

@@ -8,9 +8,5 @@
 import Foundation
 
 enum Servers : String {
-    case euw  = "euw"
-    case eune = "eune"
-    case na   = "na"
-    case kr   = "kr"
-
+    case EUW, EUNE, NA, KR
 }

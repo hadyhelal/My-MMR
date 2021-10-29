@@ -20,13 +20,19 @@ struct AlamoFireManager {
             return
         }
         
-        let urlRequese = URLRequest(url: url )
-        Alamofire.request(urlRequese).responseObject { (response: DataResponse<PlayerMMR>) in
+        Alamofire.request(URLRequest(url: url )).responseObject { (response: DataResponse<PlayerMMR>) in
             guard response.error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
-            
+            print(response.result.error)
+
+            if response.response?.statusCode == 404 {
+                completed(.failure(.invalidUsername))
+                return
+            }
+
+
             guard response.response?.statusCode == 200 else {
                 completed(.failure(.invalidResponse))
                 return
@@ -36,6 +42,7 @@ struct AlamoFireManager {
                 completed(.failure(.invalidData))
                 return
             }
+            print(playerData)
             completed(.success(playerData))
         }
         
@@ -44,6 +51,7 @@ struct AlamoFireManager {
     private func getPLayerURL(playerName : String , server : String) -> URL? {
         
         let urlString = "https://\(server).whatismymmr.com/api/v1/summoner?name=\(playerName)"
+        print(urlString)
         guard let urlLink = URL(string: urlString) else { return nil}
         return urlLink
     }
