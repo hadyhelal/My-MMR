@@ -25,7 +25,7 @@ struct AlamoFireManager {
                 completed(.failure(.unableToComplete))
                 return
             }
-            print(response.result.error)
+         //   print(response.result.error)
 
             if response.response?.statusCode == 404 {
                 completed(.failure(.invalidUsername))

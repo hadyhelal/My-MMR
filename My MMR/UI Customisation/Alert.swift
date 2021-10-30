@@ -94,10 +94,10 @@ class Alert: UIViewController {
         messageLabel.text = messageTitle ?? "WTF is Going On!"
         
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: -12)
+            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
 }

@@ -29,12 +29,31 @@ class UserDataVC: UIViewController {
     @IBOutlet weak var aramMMR: UILabel!
     @IBOutlet weak var aramSummary: UILabel!
     
-    var playerData : SavedFavorites!
+    let viewModel     = UserDataVCViewModel()
     let NotAvailiable = "N/A"
+    var playerData : SavedFavorites!
+    var favoriteUser : MMRError? {
+        didSet{
+            if favoriteUser != nil {
+                self.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
+            }else{
+                self.presentAlertOnMainThread(title: "Error", message: favoriteUser!.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllerUI()
+        
+        viewModel.favoriteUserStatus.bind { (status) in
+            if status != nil , status != "" {
+                self.presentAlertOnMainThread(title: "Error", message: status!, buttonTitle: "Ok")
+            }else if status == nil {
+                self.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
+            }
+        }
+        
     }
 
     
@@ -54,14 +73,7 @@ class UserDataVC: UIViewController {
     }
     
     @objc func addBtnTapped(){
-        persistanceManager.updateFavorites(newPlayer: playerData, actionType: .add) { [weak self] error in
-            guard error == nil else {
-                self?.presentAlertOnMainThread(title: "Error", message: error!.rawValue, buttonTitle: "Ok")
-                return
-            }
-            self?.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
-            
-        }
+        viewModel.favoriteUser(playerData: playerData, action: .add)
     }
     
     func configureRankedStatus() {
@@ -101,7 +113,6 @@ class UserDataVC: UIViewController {
 extension UserDataVC : doHasUserData {
     func userData(playerData: SavedFavorites) {
         self.playerData = playerData
-       // print(playerData.player.ranked.closestRank)
         let closestRank = playerData.player.ranked?.closestRank
         DispatchQueue.main.async {
             self.RankImage.image       = RankImages.getRankImage(withRank: closestRank ?? self.NotAvailiable)

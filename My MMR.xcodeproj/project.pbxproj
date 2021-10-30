@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		768ABE9437B9D1C6E88C9E29 /* Pods_My_MMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D513D2A9FB07BA97DA6B0413 /* Pods_My_MMR.framework */; };
+		B60D28F8272CAF670009A3AF /* UserDataVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D28F7272CAF670009A3AF /* UserDataVCViewModel.swift */; };
+		B60D2902272CBAF30009A3AF /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D2901272CBAF30009A3AF /* FavoritesViewModel.swift */; };
 		B64C3B4F270B96CB00B32B9A /* UserDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C3B4E270B96CB00B32B9A /* UserDataVC.swift */; };
 		B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DD270351C7004FC29B /* AppDelegate.swift */; };
 		B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65844DF270351C7004FC29B /* SceneDelegate.swift */; };
@@ -15,7 +17,6 @@
 		B65844E5270351C7004FC29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65844E3270351C7004FC29B /* Main.storyboard */; };
 		B65844E7270351C7004FC29B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65844E6270351C7004FC29B /* Assets.xcassets */; };
 		B65844EA270351C7004FC29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65844E8270351C7004FC29B /* LaunchScreen.storyboard */; };
-		B65AB77B2705260E001DBE60 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB77A2705260E001DBE60 /* NetworkManager.swift */; };
 		B666E7D927050D6B004181FB /* PlayerMMR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666E7D827050D6B004181FB /* PlayerMMR.swift */; };
 		B666E7DC27051E53004181FB /* MMRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666E7DB27051E53004181FB /* MMRError.swift */; };
 		B669609527125AE10079D021 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669609327125AE10079D021 /* FavoritesCell.swift */; };
@@ -28,6 +29,8 @@
 		B6812DAA2705D389007ABF70 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DA92705D389007ABF70 /* Servers.swift */; };
 		B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */; };
 		B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68357A0270F50C8000D53E4 /* String + Ext.swift */; };
+		B68BD336272C1FF400F30562 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD335272C1FF400F30562 /* Dynamic.swift */; };
+		B68BD339272C202300F30562 /* SearchModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD338272C202300F30562 /* SearchModelView.swift */; };
 		B69AA4ED27281AD80060B924 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69AA4EC27281AD80060B924 /* SearchButton.swift */; };
 		B6AE8F8B2711249A0028DF92 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE8F8A2711249A0028DF92 /* FavoritesVC.swift */; };
 		B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */; };
@@ -44,6 +47,8 @@
 /* Begin PBXFileReference section */
 		6BCFD6FD2B082456806644CE /* Pods-My MMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.release.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.release.xcconfig"; sourceTree = "<group>"; };
 		818BE81FBD4AB7893129E0C2 /* Pods-My MMR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My MMR.debug.xcconfig"; path = "Target Support Files/Pods-My MMR/Pods-My MMR.debug.xcconfig"; sourceTree = "<group>"; };
+		B60D28F7272CAF670009A3AF /* UserDataVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataVCViewModel.swift; sourceTree = "<group>"; };
+		B60D2901272CBAF30009A3AF /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		B64C3B4E270B96CB00B32B9A /* UserDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataVC.swift; sourceTree = "<group>"; };
 		B65844DA270351C7004FC29B /* My MMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My MMR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65844DD270351C7004FC29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +58,6 @@
 		B65844E6270351C7004FC29B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65844E9270351C7004FC29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65844EB270351C7004FC29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B65AB77A2705260E001DBE60 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B666E7D827050D6B004181FB /* PlayerMMR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMMR.swift; sourceTree = "<group>"; };
 		B666E7DB27051E53004181FB /* MMRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRError.swift; sourceTree = "<group>"; };
 		B669609327125AE10079D021 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		B6812DA92705D389007ABF70 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 		B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTextField.swift; sourceTree = "<group>"; };
 		B68357A0270F50C8000D53E4 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		B68BD335272C1FF400F30562 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		B68BD338272C202300F30562 /* SearchModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelView.swift; sourceTree = "<group>"; };
 		B69AA4EC27281AD80060B924 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		B6AE8F8A2711249A0028DF92 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		B6CB51272705E59C00250095 /* MMRButtonCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRButtonCustomization.swift; sourceTree = "<group>"; };
@@ -133,9 +139,9 @@
 				B6812DAC2705D9A5007ABF70 /* UI Customisation */,
 				B6812DA82705D378007ABF70 /* Utilites */,
 				B65AB779270525E7001DBE60 /* NetworkManager */,
+				B68BD334272C1F5500F30562 /* ModelViews */,
 				B666E7D727050D49004181FB /* Models */,
 				B6CB51242705DA9400250095 /* View */,
-				B6CB51252705DA9B00250095 /* Controller */,
 				B6CB51472705F1FA00250095 /* Extensions */,
 				B6CB51452705F15E00250095 /* Support */,
 				B65844EB270351C7004FC29B /* Info.plist */,
@@ -146,7 +152,6 @@
 		B65AB779270525E7001DBE60 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				B65AB77A2705260E001DBE60 /* NetworkManager.swift */,
 				B6F13FEA2725ED4300188D43 /* AlamoFireManager.swift */,
 				B66AC54C2711C4D400B46F2E /* persistenceManager.swift */,
 				B680B70727147DF2007D8286 /* Connect.swift */,
@@ -180,6 +185,7 @@
 				B66AC54F2712034F00B46F2E /* SeguesID.swift */,
 				B680B6FF271475E7007D8286 /* RankLogos.swift */,
 				B6F9CDC42725DC38002A00E7 /* RankImages.swift */,
+				B68BD335272C1FF400F30562 /* Dynamic.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -197,10 +203,21 @@
 			path = "UI Customisation";
 			sourceTree = "<group>";
 		};
+		B68BD334272C1F5500F30562 /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+				B68BD338272C202300F30562 /* SearchModelView.swift */,
+				B60D28F7272CAF670009A3AF /* UserDataVCViewModel.swift */,
+				B60D2901272CBAF30009A3AF /* FavoritesViewModel.swift */,
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
 		B6CB51242705DA9400250095 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B65844E3270351C7004FC29B /* Main.storyboard */,
+				B6CB51252705DA9B00250095 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65AB77B2705260E001DBE60 /* NetworkManager.swift in Sources */,
+				B60D2902272CBAF30009A3AF /* FavoritesViewModel.swift in Sources */,
 				B67DA488271B8D9300BE9DDC /* SavedFavorites.swift in Sources */,
 				B65844E2270351C7004FC29B /* SearchVC.swift in Sources */,
 				B6CB51342705EFEB00250095 /* MMRButton.swift in Sources */,
@@ -403,7 +420,9 @@
 				B6CB513F2705F0DB00250095 /* MMRAlertContainerView.swift in Sources */,
 				B69AA4ED27281AD80060B924 /* SearchButton.swift in Sources */,
 				B66AC5502712034F00B46F2E /* SeguesID.swift in Sources */,
+				B60D28F8272CAF670009A3AF /* UserDataVCViewModel.swift in Sources */,
 				B6CB51282705E59C00250095 /* MMRButtonCustomization.swift in Sources */,
+				B68BD339272C202300F30562 /* SearchModelView.swift in Sources */,
 				B669609527125AE10079D021 /* FavoritesCell.swift in Sources */,
 				B6812DAA2705D389007ABF70 /* Servers.swift in Sources */,
 				B6CB51492705F21200250095 /* VC Ext.swift in Sources */,
@@ -415,6 +434,7 @@
 				B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */,
 				B6CB51392705F04700250095 /* MMRTitleLabel.swift in Sources */,
 				B666E7DC27051E53004181FB /* MMRError.swift in Sources */,
+				B68BD336272C1FF400F30562 /* Dynamic.swift in Sources */,
 				B6CB512F2705EF8900250095 /* Alert.swift in Sources */,
 				B6AE8F8B2711249A0028DF92 /* FavoritesVC.swift in Sources */,
 				B64C3B4F270B96CB00B32B9A /* UserDataVC.swift in Sources */,

@@ -9,21 +9,24 @@ import UIKit
 
 class FavoritesVC: UITableViewController{
     
-    var favoritesArray : [SavedFavorites] = []
+    var favoritesArray    = [SavedFavorites] ()
     var favoritesFiltered = [SavedFavorites] ()
     var favoritesSelected = [SavedFavorites] ()
-    var delegate : doHasUserData?
+    let viewModel         = FavoritesViewModel()
+ 
+    var delegate: doHasUserData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         configureViewController()
         configureSearchController()
+        bindInstances()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        retrieveFavorites()
+        viewModel.retrieveFavorites()
     }
     
     func configureViewController() {
@@ -49,20 +52,29 @@ class FavoritesVC: UITableViewController{
         tableView.register(UINib(nibName: "FavoritesCell", bundle: nil), forCellReuseIdentifier: FavoritesCell.FavoriteID)
     }
     
-    func retrieveFavorites(){
-        persistanceManager.retrieveFavorites { [weak self] (result) in
-            guard let self = self else { return }
-            switch result{
-            case .success(let favoritesArray):
-                self.favoritesArray    = favoritesArray
-                self.favoritesSelected = favoritesArray
-                self.tableView.reloadData()
-            case .failure(let err):
-                self.presentAlertOnMainThread(title: "Can't retrieve you favorites", message: err.rawValue, buttonTitle: "Ok")
+    func bindInstances() {
+        viewModel.favoritesArray.bind { [weak self] favorites in
+            self?.favoritesArray = favorites
+        }
+        
+        viewModel.favoritesFiltered.bind { [weak self] filtered in
+            self?.favoritesFiltered = filtered
+        }
+        
+        viewModel.favoritesSelected.bind {[weak self] selected in
+            self?.favoritesSelected = selected
+        }
+        
+        viewModel.showError.bind { [weak self] msg in
+            if msg != "" {
+                self?.presentAlertOnMainThread(title: "Can't retrieve you favorites", message: msg, buttonTitle: "Ok")
             }
         }
+        
+        viewModel.reloadTableViewData.bind { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
-    
     
     // MARK: - Table view data source
     
@@ -78,7 +90,7 @@ class FavoritesVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favoritesSelected[indexPath.row]
-            self.performSegue(withIdentifier: "ToUserDataVC", sender: self)
+        self.performSegue(withIdentifier: SeguesID.toUserFromFavorite, sender: self)
             self.delegate?.userData(playerData: favorite)
         
      //Not enough games played solo/duo in last 30 days
@@ -92,20 +104,11 @@ class FavoritesVC: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        let deltedFavorite = favoritesSelected[indexPath.row]
-        
-        favoritesSelected.remove(deltedFavorite)
-        favoritesArray.remove(deltedFavorite)
+        guard editingStyle  == .delete else { return }
+        let deletedFavorite = favoritesSelected[indexPath.row]
+        viewModel.deleteFavorite(with: deletedFavorite)
         tableView.deleteRows(at: [indexPath], with: .left)
-        
-        persistanceManager.updateFavorites(newPlayer: deltedFavorite, actionType: .remove) { [weak self] error in
-            guard let self = self else { return }
-            guard error == nil  else {
-                self.presentAlertOnMainThread(title: "Can't delete this player!", message: error!.rawValue, buttonTitle: "Ok")
-                return
-            }
-        }
+
     }
     
 }
@@ -113,20 +116,12 @@ class FavoritesVC: UITableViewController{
 extension FavoritesVC : UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text  else { return }
-        guard !filter.isEmpty else {
-            favoritesSelected = favoritesArray
-            tableView.reloadData()
-            return
-        }
-        self.favoritesSelected = favoritesArray.filter {$0.summonerName.lowercased().contains(filter.lowercased())}
-        tableView.reloadData()
+        viewModel.updateSearch(with: searchController.searchBar.text)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        favoritesSelected = favoritesArray
+        viewModel.favoritesSelected.value = viewModel.favoritesArray.value
         tableView.reloadData()
     }
-    
     
 }
