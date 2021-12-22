@@ -36,6 +36,8 @@
 		B6812DAE2705D9BD007ABF70 /* MMRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */; };
 		B6827B3B272D53010029254A /* FavoriteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6827B3A272D53010029254A /* FavoriteCellViewModel.swift */; };
 		B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68357A0270F50C8000D53E4 /* String + Ext.swift */; };
+		B6848C152773D30C004C53DB /* AlamoFireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6848C142773D30C004C53DB /* AlamoFireProtocol.swift */; };
+		B6848C192773D3B0004C53DB /* AlamoFireManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6848C182773D3B0004C53DB /* AlamoFireManager+Ext.swift */; };
 		B686A26C27300B64007C96EE /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B686A26B27300B64007C96EE /* UserDefault.swift */; };
 		B68BD336272C1FF400F30562 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD335272C1FF400F30562 /* Dynamic.swift */; };
 		B68BD339272C202300F30562 /* SearchModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD338272C202300F30562 /* SearchModelView.swift */; };
@@ -97,6 +99,8 @@
 		B6812DAD2705D9BD007ABF70 /* MMRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRTextField.swift; sourceTree = "<group>"; };
 		B6827B3A272D53010029254A /* FavoriteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellViewModel.swift; sourceTree = "<group>"; };
 		B68357A0270F50C8000D53E4 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		B6848C142773D30C004C53DB /* AlamoFireProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireProtocol.swift; sourceTree = "<group>"; };
+		B6848C182773D3B0004C53DB /* AlamoFireManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlamoFireManager+Ext.swift"; sourceTree = "<group>"; };
 		B686A26B27300B64007C96EE /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		B68BD335272C1FF400F30562 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		B68BD338272C202300F30562 /* SearchModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelView.swift; sourceTree = "<group>"; };
@@ -253,6 +257,16 @@
 			path = "UI Customisation";
 			sourceTree = "<group>";
 		};
+		B6848C132773D2E5004C53DB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B616CE1B276D60C800CF2C47 /* AlamoFireManager.swift */,
+				B6848C142773D30C004C53DB /* AlamoFireProtocol.swift */,
+				B6848C182773D3B0004C53DB /* AlamoFireManager+Ext.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B68BD334272C1F5500F30562 /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				B68FE3B6272EB52100DC44D7 /* DropDownList.swift */,
-				B616CE1B276D60C800CF2C47 /* AlamoFireManager.swift */,
+				B6848C132773D2E5004C53DB /* New Group */,
 				B686A26B27300B64007C96EE /* UserDefault.swift */,
 			);
 			path = "DI Services";
@@ -516,6 +530,7 @@
 				B616CE1C276D60C800CF2C47 /* AlamoFireManager.swift in Sources */,
 				B67DA488271B8D9300BE9DDC /* SavedFavorites.swift in Sources */,
 				B65844E2270351C7004FC29B /* SearchVC.swift in Sources */,
+				B6848C192773D3B0004C53DB /* AlamoFireManager+Ext.swift in Sources */,
 				B6827B3B272D53010029254A /* FavoriteCellViewModel.swift in Sources */,
 				B6CB51342705EFEB00250095 /* MMRButton.swift in Sources */,
 				B66AC54D2711C4D400B46F2E /* persistenceManager.swift in Sources */,
@@ -535,6 +550,7 @@
 				B680B700271475E7007D8286 /* RankLogos.swift in Sources */,
 				B680B70827147DF2007D8286 /* Connect.swift in Sources */,
 				B65844DE270351C7004FC29B /* AppDelegate.swift in Sources */,
+				B6848C152773D30C004C53DB /* AlamoFireProtocol.swift in Sources */,
 				B68FE3B7272EB52100DC44D7 /* DropDownList.swift in Sources */,
 				B65844E0270351C7004FC29B /* SceneDelegate.swift in Sources */,
 				B6CB51392705F04700250095 /* MMRTitleLabel.swift in Sources */,
