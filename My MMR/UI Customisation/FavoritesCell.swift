@@ -10,7 +10,7 @@ import UIKit
 class FavoritesCell: UITableViewCell {
     
     static let FavoriteID = "FavoriteID"
-    
+    let viewModel         = FavoriteCellViewModel()
     @IBOutlet weak var summonerNameLabel: UILabel!
     
     @IBOutlet weak var summonerImage: UIImageView!
@@ -18,6 +18,14 @@ class FavoritesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.accessoryType = .disclosureIndicator
+        
+        viewModel.summonerImage.bind { [weak self] image in
+            self?.summonerImage.image = image
+        }
+        
+        viewModel.summonerName.bind { [weak self] summonerName in
+            self?.summonerNameLabel.text = summonerName
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,9 +33,6 @@ class FavoritesCell: UITableViewCell {
 
     }
     
-    func set(favorite : SavedFavorites){
-        summonerNameLabel.text = favorite.summonerName
-        summonerImage.image    = RankImages.getRankImage(withRank: favorite.player.ranked?.closestRank ?? "N/A")
-    }
+
     
 }

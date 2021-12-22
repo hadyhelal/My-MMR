@@ -9,7 +9,7 @@ import UIKit
 
 class FavoritesVC: UITableViewController{
     
-    var favoritesArray    = [SavedFavorites] ()
+    var favoritesOriginal = [SavedFavorites] ()
     var favoritesFiltered = [SavedFavorites] ()
     var favoritesSelected = [SavedFavorites] ()
     let viewModel         = FavoritesViewModel()
@@ -53,8 +53,8 @@ class FavoritesVC: UITableViewController{
     }
     
     func bindInstances() {
-        viewModel.favoritesArray.bind { [weak self] favorites in
-            self?.favoritesArray = favorites
+        viewModel.favoritesOriginal.bind { [weak self] favorites in
+            self?.favoritesOriginal = favorites
         }
         
         viewModel.favoritesFiltered.bind { [weak self] filtered in
@@ -84,16 +84,16 @@ class FavoritesVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesCell.FavoriteID, for: indexPath) as! FavoritesCell
-        cell.set(favorite: favoritesSelected[indexPath.row])
+        cell.viewModel.set(favorite: favoritesSelected[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favoritesSelected[indexPath.row]
         self.performSegue(withIdentifier: SeguesID.toUserFromFavorite, sender: self)
-            self.delegate?.userData(playerData: favorite)
+        self.delegate?.userData(playerData: favorite)
         
-     //Not enough games played solo/duo in last 30 days
+        //Not enough games played solo/duo in last 30 days
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,7 +107,9 @@ class FavoritesVC: UITableViewController{
         guard editingStyle  == .delete else { return }
         let deletedFavorite = favoritesSelected[indexPath.row]
         viewModel.deleteFavorite(with: deletedFavorite)
-        tableView.deleteRows(at: [indexPath], with: .left)
+        if viewModel.showError.value != "Can't delete this player!" {
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
 
     }
     
@@ -120,7 +122,7 @@ extension FavoritesVC : UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.favoritesSelected.value = viewModel.favoritesArray.value
+        viewModel.favoritesSelected.value = viewModel.favoritesOriginal.value
         tableView.reloadData()
     }
     

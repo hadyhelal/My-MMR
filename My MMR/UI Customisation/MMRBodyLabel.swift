@@ -33,5 +33,4 @@ class MMRBodyLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
 }

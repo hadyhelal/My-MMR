@@ -16,38 +16,26 @@ protocol doHasUserData {
 final class SearchVC: UIViewController {
     
     var delegate: doHasUserData?
-    var dropDown     = DropDown()
-    var chosenServer = Region.EUNE.rawValue
-    var viewModel    = SearchModelView()
-    var loadingStatus : Bool = false {
-        didSet {
-            loadingStatus ? showLoadingScreen() : stopLoadingScreen()
-        }
-    }
+    var dropDown       = DropDownList()
+    var chosenServer   = Region.EUNE.rawValue
+    var alamoFireDI    = AlamoFireManager(operationQueue: OperationQueue())
+    
+    lazy var viewModel: SearchModelView = {
+        return SearchModelView(dropDown: dropDown, alamoFire: alamoFireDI)
+    }()
     
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var serverButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tapRecognizer(view: self.view)
         configureVCCustomisation()
+        bindingInstances()
         textField.delegate = self
-        
-        viewModel.chosenServer.bind { [weak self] chosenServer in
-            self?.chosenServer = chosenServer
-        }
-        
-        viewModel.loadingScreenStatus.bind { [weak self] loadingStatus in
-            self?.loadingStatus = loadingStatus
-        }
-        
-        viewModel.summonerName.bind { [weak self] summonerName in
-            self?.textField.text = summonerName
-        }
         
     }
     
@@ -61,10 +49,26 @@ final class SearchVC: UIViewController {
         authenticateGettingSummoner()
     }
     
+    func bindingInstances() {
+        viewModel.chosenServer.bind { [weak self] chosenServer in
+            self?.chosenServer = chosenServer
+        }
+        
+        viewModel.loadingScreenStatus.bind { [weak self] loadingStatus in
+            loadingStatus ? self?.showLoadingScreen() : self?.stopLoadingScreen()
+
+        }
+        
+        viewModel.summonerName.bind { [weak self] summonerName in
+            self?.textField.text = summonerName
+        }
+    }
+    
     func authenticateGettingSummoner(){
         guard let summonerName = textField.text?.replacingOccurrences(of: " ", with: "") else {
             return
         }
+        
         viewModel.getSummunorMMR(playerName: summonerName) { [weak self] (result) in
             guard let self = self else {return}
             switch result{
@@ -76,7 +80,7 @@ final class SearchVC: UIViewController {
                     self.performSegue(withIdentifier: SeguesID.toUserDataVC, sender: self)
                     self.delegate?.userData(playerData: playerInfo)
                 }
-            
+                
             case .failure(let error):
                 self.presentAlertOnMainThread(title: "Something wrong!", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -91,14 +95,13 @@ final class SearchVC: UIViewController {
         return false
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SeguesID.toUserDataVC {
             let destination = segue.destination as? UserDataVC
             self.delegate = destination
         }
     }
-
+    
     func configureVCCustomisation(){
         MMRTextField.configureTF(textField: textField)
         MMRButtonCustomization.configureSearchButton(button: searchButton)

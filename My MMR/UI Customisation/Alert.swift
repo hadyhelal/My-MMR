@@ -5,7 +5,6 @@
 //  Created by Hady Helal on 30/09/2021.
 //
 
-
 import UIKit
 
 class Alert: UIViewController {
@@ -15,11 +14,11 @@ class Alert: UIViewController {
     let messageLabel  = MMRBodyLabel(textAlginment: .center)
     let actionButton  = MMRButton(backgroundColor: .systemPink, title: "Ok")
     
-    var alertTitle   : String?
-    var messageTitle : String?
-    var buttonTitle  : String?
+    var alertTitle: String?
+    var messageTitle: String?
+    var buttonTitle: String?
     
-    let padding : CGFloat = 20
+    let padding: CGFloat = 20
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

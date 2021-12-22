@@ -8,7 +8,7 @@
 import UIKit
 
 class UserDataVC: UIViewController {
-
+    
     //MARK: - Top View
     @IBOutlet weak var summonerUsername: UILabel!
     @IBOutlet weak var RankImage: UIImageView!
@@ -29,37 +29,19 @@ class UserDataVC: UIViewController {
     @IBOutlet weak var aramMMR: UILabel!
     @IBOutlet weak var aramSummary: UILabel!
     
-    let viewModel     = UserDataVCViewModel()
+    let viewModel     = UserDataVCViewModel(persistanceManagers: UserDefault())
     let NotAvailiable = "N/A"
-    var playerData : SavedFavorites!
-    var favoriteUser : MMRError? {
-        didSet{
-            if favoriteUser != nil {
-                self.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
-            }else{
-                self.presentAlertOnMainThread(title: "Error", message: favoriteUser!.rawValue, buttonTitle: "Ok")
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllerUI()
-        
-        viewModel.favoriteUserStatus.bind { (status) in
-            if status != nil , status != "" {
-                self.presentAlertOnMainThread(title: "Error", message: status!, buttonTitle: "Ok")
-            }else if status == nil {
-                self.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
-            }
-        }
+        configureBindingInstances()
         
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden            = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -67,65 +49,67 @@ class UserDataVC: UIViewController {
         rankedView.layer.cornerRadius = 20
         normalView.layer.cornerRadius = 20
         aramView.layer.cornerRadius   = 20
-       
+        
         let barBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtnTapped))
         navigationItem.rightBarButtonItem = barBtn
     }
     
     @objc func addBtnTapped(){
+        guard let playerData = viewModel.playerData else { return }
         viewModel.favoriteUser(playerData: playerData, action: .add)
     }
     
-    func configureRankedStatus() {
-        guard let mmr = playerData.player.ranked?.avg , var summary = playerData.player.ranked?.summary else {
-            rankedMMR.text     = NotAvailiable
-            rankedSummary.text = NotAvailiable
-            return
-        }
-        rankedMMR.text         = String(mmr)
-        rankedSummary.text     = summary.extractMMRSummary(summmary: &summary)
-
-    }
     
-    func configureNormalStatus() {
-        guard let mmr = playerData.player.normal?.avg , let currentRank = playerData.player.normal?.closestRank else {
-            normalMMR.text     = NotAvailiable
-            normalSummary.text = NotAvailiable
-            return
+    func configureBindingInstances(){
+        viewModel.rankedMMR.bind { [weak self] rankedMMR in
+            self?.rankedMMR.text = rankedMMR
         }
-        normalMMR.text         = String(mmr)
-        normalSummary.text     = currentRank
-    }
-    
-    func configureAramStatus() {
-        guard let mmr = playerData.player.ARAM?.avg , let currentRank = playerData.player.ARAM?.closestRank else {
-            aramMMR.text     = NotAvailiable
-            aramSummary.text = NotAvailiable
-            return
+        
+        viewModel.rankedSummary.bind { [weak self] rankedText in
+            self?.rankedSummary.text = rankedText
         }
-        aramMMR.text         = String(mmr)
-        aramSummary.text     = currentRank
+        
+        viewModel.normalMMR.bind { [weak self] normalMMR in
+            self?.normalMMR.text = normalMMR
+        }
+        
+        viewModel.normalSummary.bind { [weak self] normalSummary in
+            self?.normalSummary.text = normalSummary
+        }
+        
+        viewModel.aramMMR.bind { [weak self] aramMMR in
+            self?.aramMMR.text = aramMMR
+        }
+        
+        viewModel.aramSummary.bind { [weak self] aramSummary in
+            self?.aramSummary.text = aramSummary
+        }
+        
+        viewModel.favoriteUserStatus.bind { [weak self] status in
+            if status != nil , status != "" {
+                self?.presentAlertOnMainThread(title: "Error", message: status!, buttonTitle: "Ok")
+            }else if status == nil {
+                self?.presentAlertOnMainThread(title: "Add to favorite", message: "You successfully favorited this user!", buttonTitle: "Ok")
+            }
+        }
     }
     
 }
 
-
 extension UserDataVC : doHasUserData {
     func userData(playerData: SavedFavorites) {
-        self.playerData = playerData
+        viewModel.playerData = playerData
         let closestRank = playerData.player.ranked?.closestRank
         DispatchQueue.main.async {
             self.RankImage.image       = RankImages.getRankImage(withRank: closestRank ?? self.NotAvailiable)
             self.currentRank.text      = closestRank ?? self.NotAvailiable
             self.summonerUsername.text = playerData.summonerName
             self.title                 = playerData.summonerName
-            self.configureRankedStatus()
-            self.configureNormalStatus()
-            self.configureAramStatus()
+            self.viewModel.configureRankedStatus()
+            self.viewModel.configureNormalStatus()
+            self.viewModel.configureAramStatus()
         }
         
-        
     }
-    
     
 }

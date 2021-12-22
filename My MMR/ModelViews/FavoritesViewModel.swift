@@ -8,18 +8,23 @@
 import Foundation
 
 class FavoritesViewModel {
-    var favoritesArray: Dynamic<[SavedFavorites]> = Dynamic([])
+    var favoritesOriginal: Dynamic<[SavedFavorites]> = Dynamic([])
     var favoritesFiltered: Dynamic<[SavedFavorites]> = Dynamic([])
     var favoritesSelected: Dynamic<[SavedFavorites]> = Dynamic([])
-    var reloadTableViewData   = Dynamic(false)
-    let showError             = Dynamic("")
+    var reloadTableViewData = Dynamic(false)
+    let showError           = Dynamic("")
     
+    var persistanceManager: UserDefaultProtocol
+    
+    init(persistanceManager: UserDefaultProtocol = UserDefault()) {
+        self.persistanceManager = persistanceManager
+    }
     func retrieveFavorites(){
         persistanceManager.retrieveFavorites { [weak self] (result) in
             guard let self = self else { return }
             switch result{
             case .success(let favoritesArray):
-                self.favoritesArray.value      = favoritesArray
+                self.favoritesOriginal.value      = favoritesArray
                 self.favoritesSelected.value   = favoritesArray
                 self.reloadTableViewData.value = true
             case .failure(let err):
@@ -37,18 +42,18 @@ class FavoritesViewModel {
                 return
             }
             self.favoritesSelected.value.remove(deltedFavorite)
-            self.favoritesArray.value.remove(deltedFavorite)
+            self.favoritesOriginal.value.remove(deltedFavorite)
         }
     }
     
     func updateSearch(with filter: String?){
         guard let filter = filter  else { return }
         guard !filter.isEmpty else {
-            favoritesSelected.value  = favoritesArray.value
+            favoritesSelected.value  = favoritesOriginal.value
             reloadTableViewData.value.toggle()
             return
         }
-        self.favoritesSelected.value = favoritesArray.value.filter {$0.summonerName.lowercased().contains(filter.lowercased())}
+        self.favoritesSelected.value = favoritesOriginal.value.filter {$0.summonerName.lowercased().contains(filter.lowercased())}
         reloadTableViewData.value.toggle()
     }
 }

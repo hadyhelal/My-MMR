@@ -1,0 +1,66 @@
+
+{
+  "ranked": {
+    "avg": null,
+    "err": 99,
+    "warn": true,
+    "summary": null,
+    "closestRank": null,
+    "percentile": null,
+    "tierData": [
+      
+    ],
+    "timestamp": null,
+    "historical": [
+      
+    ],
+    "historicalTierData": [
+      
+    ]
+  },
+  "normal": {
+    "avg": 1607,
+    "err": 25,
+    "warn": false,
+    "closestRank": "Gold IV",
+    "percentile": 62.52,
+    "timestamp": 1639777708,
+    "historical": [
+      {
+        "avg": 1593,
+        "err": 17,
+        "warn": false,
+        "timestamp": 1639699200
+      },
+      {
+        "avg": 1646,
+        "err": 20,
+        "warn": false,
+        "timestamp": 1639440000
+      },
+      {
+        "avg": 1624,
+        "err": 27,
+        "warn": false,
+        "timestamp": 1639094400
+      },
+      {
+        "avg": 1636,
+        "err": 11,
+        "warn": false,
+        "timestamp": 1638921600
+      }
+    ]
+  },
+  "ARAM": {
+    "avg": 1881,
+    "err": 99,
+    "warn": true,
+    "closestRank": "Silver II",
+    "percentile": 42.67,
+    "timestamp": 1639577756,
+    "historical": [
+      
+    ]
+  }
+}
