@@ -8,7 +8,6 @@
 import Foundation
 
 //
-//
 //enum persistanceManager {
 //    static var defaults = UserDefaults.standard
 //    enum key {

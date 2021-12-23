@@ -32,18 +32,3 @@ struct ErrorNoRecentData: Codable, Mappable {
     var message: String?
     var code: Int?
 }
-// MARK: - PlayerMMR
-
-//struct PlayerMMR: Codable,Mappable{
-//    init?(map: Map) {}
-//
-//    mutating func mapping(map: Map) {
-//        ranked <- map["ranked"]
-//        normal <- map["normal"]
-//        ARAM   <- map["ARAM"]
-//    }
-//
-//    var ranked: Ranked?
-//    var normal: Aram?
-//    var ARAM: Aram?
-//}

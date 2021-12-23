@@ -5,15 +5,15 @@
 //  Created by Hady Helal on 18/12/2021.
 //
 
-import Foundation
 
-class AlamoFireManager: AlamoFireProtocol {
+//MARK: - This class is responsilbe for managing Alamofire requests and error threw.
+
+import Foundation
+import Resolver
+class AlamoFireManager: AlamoFireManagerProtocol {
      
-     let operationQueue: OperationQueue
-     
-     init(operationQueue: OperationQueue) {
-          self.operationQueue = operationQueue
-     }
+     @Injected var operationQueue: OperationQueue
+     @Injected var alamoFireRequest: AlamoFireRequestsProtocol
      
      func getUserData(playerName: String , server: String, completed: @escaping (Swift.Result<PlayerMMR , MMRError>) -> Void) {
           guard let url = getPLayerURL(playerName: playerName, server: server) else {
@@ -23,12 +23,12 @@ class AlamoFireManager: AlamoFireProtocol {
           
           let urlRequest = URLRequest(url: url)
           
-          let firstBlock = BlockOperation { [weak self] in
-               self?.checkIfSummonerNameHasData(with: urlRequest) { [weak self] result in
+          let firstRequest = BlockOperation { [weak self] in
+               self?.alamoFireRequest.checkIfSummonerNameHasData(with: urlRequest) { [weak self] result in
                     switch result {
                     case .success(let failedWithNoRecentData ):
-                         completed(.failure(MMRError(rawValue: failedWithNoRecentData)!) )
                          self?.operationQueue.cancelAllOperations()
+                         completed(.failure(MMRError(rawValue: failedWithNoRecentData)!) )
                          return
                     case .failure(_):
                          break
@@ -36,8 +36,8 @@ class AlamoFireManager: AlamoFireProtocol {
                }
           }
           
-          let secondBlock = BlockOperation { [weak self] in
-               self?.fetchSummonerMMRData(with: urlRequest) { result in
+          let secondRequest = BlockOperation { [weak self] in
+               self?.alamoFireRequest.fetchSummonerMMRData(with: urlRequest) { result in
                     switch result {
                     case .success(let playerMMR):
                          completed(.success(playerMMR))
@@ -47,8 +47,8 @@ class AlamoFireManager: AlamoFireProtocol {
                }
           }
           
-          secondBlock.addDependency(firstBlock)
-          operationQueue.addOperations([firstBlock,secondBlock], waitUntilFinished: false)
+          secondRequest.addDependency(firstRequest)
+          operationQueue.addOperations([firstRequest,secondRequest], waitUntilFinished: true)
      }
      
      func getPLayerURL(playerName: String , server : String) -> URL? {

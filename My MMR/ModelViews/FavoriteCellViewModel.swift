@@ -11,7 +11,6 @@ import UIKit.UIImage
 class FavoriteCellViewModel {
     let summonerImage: Dynamic<UIImage?> = Dynamic(nil)
     let summonerName:  Dynamic<String>   = Dynamic("")
-    
     func set(favorite : SavedFavorites){
         summonerName.value  = favorite.summonerName
         summonerImage.value = RankImages.getRankImage(withRank: favorite.player.ranked?.closestRank ?? "N/A")

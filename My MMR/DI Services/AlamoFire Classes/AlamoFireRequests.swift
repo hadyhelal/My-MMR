@@ -1,15 +1,17 @@
 //
-//  AlamoFireManager+Ext.swift
+//  AlamoFireRequests.swift
 //  My MMR
 //
-//  Created by Hady Helal on 22/12/2021.
+//  Created by Hady Helal on 23/12/2021.
 //
 
+//MARK: - This class is responsible for RESTful APIs
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-extension AlamoFireManager: AlamoFireRequests {
+class AlamoFireRequests: AlamoFireRequestsProtocol {
+    
      func fetchSummonerMMRData(with urlRequest: URLRequest, completed: @escaping (Swift.Result<PlayerMMR,MMRError>) -> Void) {
           Alamofire.request(urlRequest).responseObject { (response: DataResponse<PlayerMMR>) in
                guard response.error == nil else {

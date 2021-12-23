@@ -18,10 +18,10 @@ final class SearchVC: UIViewController {
     var delegate: doHasUserData?
     var dropDown       = DropDownList()
     var chosenServer   = Region.EUNE.rawValue
-    var alamoFireDI    = AlamoFireManager(operationQueue: OperationQueue())
+    var alamoFireDI    = AlamoFireManager()
     
     lazy var viewModel: SearchModelView = {
-        return SearchModelView(dropDown: dropDown, alamoFire: alamoFireDI)
+        return SearchModelView()
     }()
     
     @IBOutlet weak var frontImage: UIImageView!

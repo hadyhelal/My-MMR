@@ -13,7 +13,7 @@ class AlamoFireManagerTests: XCTestCase {
     var sut: AlamoFireManager!
     override func setUpWithError() throws {
         super.setUp()
-        sut = AlamoFireManager()
+        sut = AlamoFireManager(operationQueue: OperationQueue(), alamoFireRequest: AlamoFireRequests())
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 

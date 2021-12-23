@@ -29,7 +29,7 @@ class UserDataVC: UIViewController {
     @IBOutlet weak var aramMMR: UILabel!
     @IBOutlet weak var aramSummary: UILabel!
     
-    let viewModel     = UserDataVCViewModel(persistanceManagers: UserDefault())
+    let viewModel     = UserDataVCViewModel()
     let NotAvailiable = "N/A"
     
     override func viewDidLoad() {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Resolver
 
 class FavoritesViewModel {
     var favoritesOriginal: Dynamic<[SavedFavorites]> = Dynamic([])
@@ -14,11 +15,8 @@ class FavoritesViewModel {
     var reloadTableViewData = Dynamic(false)
     let showError           = Dynamic("")
     
-    var persistanceManager: UserDefaultProtocol
-    
-    init(persistanceManager: UserDefaultProtocol = UserDefault()) {
-        self.persistanceManager = persistanceManager
-    }
+    @Injected var persistanceManager: UserDefaultProtocol
+  
     func retrieveFavorites(){
         persistanceManager.retrieveFavorites { [weak self] (result) in
             guard let self = self else { return }

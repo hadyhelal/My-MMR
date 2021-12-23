@@ -74,4 +74,5 @@ class UserDefault: UserDefaultProtocol {
             return .unableToFavorite
         }
     }
+    
 }

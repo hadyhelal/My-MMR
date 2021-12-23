@@ -18,5 +18,6 @@ end
   pod 'DropDown', '2.3.13'
   pod 'LeagueAPI'
   pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'Resolver'
 end
 

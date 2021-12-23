@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Resolver
 class UserDataVCViewModel {
     
     let favoriteUserStatus: Dynamic<String?> = Dynamic("")
@@ -22,10 +22,7 @@ class UserDataVCViewModel {
     let aramMMR       = Dynamic("")
     let aramSummary   = Dynamic("")
     
-    var persistanceM: UserDefaultProtocol
-    init( persistanceManagers: UserDefaultProtocol) {
-        self.persistanceM = persistanceManagers
-    }
+    @Injected var persistanceM: UserDefaultProtocol
     
     func favoriteUser (playerData: SavedFavorites , action: persistanceActionType){
         persistanceM.updateFavorites(newPlayer: playerData, actionType: .add) { [weak self] error in

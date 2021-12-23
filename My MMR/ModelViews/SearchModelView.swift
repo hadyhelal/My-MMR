@@ -6,6 +6,7 @@
 //
 
 import UIKit.UIButton
+import Resolver
 
 class SearchModelView {
     let chosenServer        = Dynamic("EUNE")
@@ -13,13 +14,8 @@ class SearchModelView {
     let loadingScreenStatus = Dynamic(false)
     
     //Dependacy Injection
-    var dropDown: DropDownProtocol
-    var alamoFire: AlamoFireProtocol
-    
-    init( dropDown : DropDownProtocol, alamoFire: AlamoFireProtocol) {
-        self.dropDown  = dropDown
-        self.alamoFire = alamoFire
-    }
+    @Injected var alamoFire: AlamoFireManagerProtocol
+    @Injected var dropDown: DropDownProtocol
     
     func getSummunorMMR(playerName: String, completed: @escaping (Result<PlayerMMR, MMRError>)-> Void){
         loadingScreenStatus.value = true

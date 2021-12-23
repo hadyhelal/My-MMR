@@ -8,7 +8,6 @@
 import Foundation
 
 struct SavedFavorites : Codable , Equatable{
-    
     static func == (lhs: SavedFavorites, rhs: SavedFavorites) -> Bool {
         return lhs.summonerName == rhs.summonerName
     }

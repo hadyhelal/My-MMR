@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Resolver
 
 class Alert: UIViewController {
 

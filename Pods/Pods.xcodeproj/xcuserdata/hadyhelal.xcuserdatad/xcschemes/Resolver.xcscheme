@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B65844D9270351C7004FC29B"
-               BuildableName = "My MMR.app"
-               BlueprintName = "My MMR"
-               ReferencedContainer = "container:My MMR.xcodeproj">
+               BlueprintIdentifier = "3AF1A4FE1808CDAE51281F7A31DB2A13"
+               BuildableName = "Resolver.framework"
+               BlueprintName = "Resolver"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B616CE08276D5EE600CF2C47"
-               BuildableName = "My MMRTests.xctest"
-               BlueprintName = "My MMRTests"
-               ReferencedContainer = "container:My MMR.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B65844D9270351C7004FC29B"
-            BuildableName = "My MMR.app"
-            BlueprintName = "My MMR"
-            ReferencedContainer = "container:My MMR.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B65844D9270351C7004FC29B"
-            BuildableName = "My MMR.app"
-            BlueprintName = "My MMR"
-            ReferencedContainer = "container:My MMR.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
