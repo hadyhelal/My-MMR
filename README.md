@@ -1,5 +1,5 @@
 # My-MMR
-iOS application extract data from riot api for league of legends players to result much accurate MMR for the player as well as current rank, last played game..etc
+iOS application extract data from Riot APIs for league of legends players to result much accurate MMR for the player as well as current rank, last played game..etc
 
 ## Search Screen.
 ![Image of SearchSummoner](https://github.com/hadyhelal/My-MMR/blob/main/Github%20images/Search%20screen.png)
