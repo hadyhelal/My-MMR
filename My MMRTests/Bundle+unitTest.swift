@@ -8,6 +8,6 @@
 import Foundation
 extension Bundle {
     public class var unitTest: Bundle {
-        return Bundle(for: AlamoFireManagerTests.self)
+        return Bundle(for: AlamoFireRequestsTests.self)
     }
 }

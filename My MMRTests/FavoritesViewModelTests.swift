@@ -1,27 +1,28 @@
 //
-//  My_MMRTests.swift
+//  FavoritesViewModelTests.swift
 //  My MMRTests
 //
-//  Created by Hady Helal on 18/12/2021.
+//  Created by Hady Helal on 24/12/2021.
 //
 
 import XCTest
+@testable import My_MMR
 
-class My_MMRTests: XCTestCase {
+class FavoritesViewModelTests: XCTestCase {
 
+    var sut: FavoritesViewModel!
     override func setUpWithError() throws {
+        try super.setUpWithError()
+        sut = FavoritesViewModel()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
+        
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }

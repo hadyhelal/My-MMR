@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-  - AlamofireObjectMapper (5.2.1):
+  - AlamofireObjectMapper (5.1.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
   - DropDown (2.3.13)
@@ -9,7 +9,7 @@ PODS:
   - Resolver (1.5.0)
 
 DEPENDENCIES:
-  - AlamofireObjectMapper (~> 5.2)
+  - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
   - DropDown (= 2.3.13)
   - LeagueAPI
   - Resolver
@@ -17,20 +17,29 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - AlamofireObjectMapper
     - DropDown
     - LeagueAPI
     - ObjectMapper
     - Resolver
 
+EXTERNAL SOURCES:
+  AlamofireObjectMapper:
+    :branch: xcode-10-2-fix
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
+
+CHECKOUT OPTIONS:
+  AlamofireObjectMapper:
+    :commit: 0cbb1f954b9432124c30955514e0219c2d8e5a33
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
+
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   LeagueAPI: 90b086771eade414b491d8b3c30d6b56e2c5b535
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
 
-PODFILE CHECKSUM: 0285044941fd84c59df78c8857ca5f1db9552b0b
+PODFILE CHECKSUM: 4f7d9c9380f84e69f595bc01329a4384cbfe54f0
 
 COCOAPODS: 1.10.1

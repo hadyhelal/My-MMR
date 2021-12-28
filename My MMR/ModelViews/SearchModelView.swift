@@ -7,7 +7,7 @@
 
 import UIKit.UIButton
 import Resolver
-
+import Swift
 class SearchModelView {
     let chosenServer        = Dynamic("EUNE")
     let summonerName        = Dynamic("")
@@ -21,7 +21,7 @@ class SearchModelView {
         loadingScreenStatus.value = true
         alamoFire.getUserData(playerName: playerName, server: chosenServer.value) {  result in
             self.loadingScreenStatus.value = false
-
+            print("hello",terminator: "")
             switch result {
             case .success(let summonerMMR):
                 completed(.success(summonerMMR))

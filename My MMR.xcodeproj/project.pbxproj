@@ -11,7 +11,6 @@
 		B60D28F8272CAF670009A3AF /* UserDataVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D28F7272CAF670009A3AF /* UserDataVCViewModel.swift */; };
 		B60D2902272CBAF30009A3AF /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D2901272CBAF30009A3AF /* FavoritesViewModel.swift */; };
 		B616CE0C276D5EE600CF2C47 /* My_MMRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616CE0B276D5EE600CF2C47 /* My_MMRTests.swift */; };
-		B616CE16276D5F1B00CF2C47 /* AlamoFireManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616CE15276D5F1B00CF2C47 /* AlamoFireManagerTests.swift */; };
 		B616CE1C276D60C800CF2C47 /* AlamoFireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616CE1B276D60C800CF2C47 /* AlamoFireManager.swift */; };
 		B616CE20276D628E00CF2C47 /* stub.json in Resources */ = {isa = PBXBuildFile; fileRef = B616CE1F276D628E00CF2C47 /* stub.json */; };
 		B616CE26276D62EB00CF2C47 /* Bundle+unitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616CE25276D62EB00CF2C47 /* Bundle+unitTest.swift */; };
@@ -30,6 +29,7 @@
 		B66AC5502712034F00B46F2E /* SeguesID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AC54F2712034F00B46F2E /* SeguesID.swift */; };
 		B66E77FE276E81310047DBB3 /* FailedWithNoRecentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E77FD276E81310047DBB3 /* FailedWithNoRecentData.swift */; };
 		B67DA488271B8D9300BE9DDC /* SavedFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67DA487271B8D9300BE9DDC /* SavedFavorites.swift */; };
+		B67E76FE2777CD1E007B27D1 /* Resolver+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E76FD2777CD1E007B27D1 /* Resolver+XCTest.swift */; };
 		B68072DC2774838A00D682D5 /* AlamoFireRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68072DB2774838A00D682D5 /* AlamoFireRequests.swift */; };
 		B680B700271475E7007D8286 /* RankLogos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680B6FF271475E7007D8286 /* RankLogos.swift */; };
 		B680B70827147DF2007D8286 /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680B70727147DF2007D8286 /* Connect.swift */; };
@@ -39,6 +39,11 @@
 		B68357A1270F50C8000D53E4 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68357A0270F50C8000D53E4 /* String + Ext.swift */; };
 		B6848C152773D30C004C53DB /* AlamoFireProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6848C142773D30C004C53DB /* AlamoFireProtocols.swift */; };
 		B686A26C27300B64007C96EE /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B686A26B27300B64007C96EE /* UserDefault.swift */; };
+		B68AE4712775F9CB0008E0FC /* AlamoFireRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AE4702775F9CB0008E0FC /* AlamoFireRequestsTests.swift */; };
+		B68AE47E277622780008E0FC /* stubFirstRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = B68AE47D277622780008E0FC /* stubFirstRequest.json */; };
+		B68AE490277632740008E0FC /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AE48F277632740008E0FC /* FavoritesViewModelTests.swift */; };
+		B68AE496277636950008E0FC /* UserDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AE495277636950008E0FC /* UserDefaultTests.swift */; };
+		B68AE49C277637E60008E0FC /* stubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AE49B277637E60008E0FC /* stubGenerator.swift */; };
 		B68BD336272C1FF400F30562 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD335272C1FF400F30562 /* Dynamic.swift */; };
 		B68BD339272C202300F30562 /* SearchModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68BD338272C202300F30562 /* SearchModelView.swift */; };
 		B68FA62A27751FBA00ADCDB6 /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68FA62927751FBA00ADCDB6 /* App+Injection.swift */; };
@@ -73,7 +78,6 @@
 		B616CE09276D5EE600CF2C47 /* My MMRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My MMRTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B616CE0B276D5EE600CF2C47 /* My_MMRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_MMRTests.swift; sourceTree = "<group>"; };
 		B616CE0D276D5EE600CF2C47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B616CE15276D5F1B00CF2C47 /* AlamoFireManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireManagerTests.swift; sourceTree = "<group>"; };
 		B616CE1B276D60C800CF2C47 /* AlamoFireManager.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = AlamoFireManager.swift; sourceTree = "<group>"; };
 		B616CE1F276D628E00CF2C47 /* stub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stub.json; sourceTree = "<group>"; };
 		B616CE25276D62EB00CF2C47 /* Bundle+unitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+unitTest.swift"; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		B66AC54F2712034F00B46F2E /* SeguesID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguesID.swift; sourceTree = "<group>"; };
 		B66E77FD276E81310047DBB3 /* FailedWithNoRecentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedWithNoRecentData.swift; sourceTree = "<group>"; };
 		B67DA487271B8D9300BE9DDC /* SavedFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFavorites.swift; sourceTree = "<group>"; };
+		B67E76FD2777CD1E007B27D1 /* Resolver+XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+XCTest.swift"; sourceTree = "<group>"; };
 		B68072DB2774838A00D682D5 /* AlamoFireRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireRequests.swift; sourceTree = "<group>"; };
 		B680B6FF271475E7007D8286 /* RankLogos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankLogos.swift; sourceTree = "<group>"; };
 		B680B70727147DF2007D8286 /* Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
@@ -103,6 +108,11 @@
 		B68357A0270F50C8000D53E4 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		B6848C142773D30C004C53DB /* AlamoFireProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireProtocols.swift; sourceTree = "<group>"; };
 		B686A26B27300B64007C96EE /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		B68AE4702775F9CB0008E0FC /* AlamoFireRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireRequestsTests.swift; sourceTree = "<group>"; };
+		B68AE47D277622780008E0FC /* stubFirstRequest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stubFirstRequest.json; sourceTree = "<group>"; };
+		B68AE48F277632740008E0FC /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
+		B68AE495277636950008E0FC /* UserDefaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultTests.swift; sourceTree = "<group>"; };
+		B68AE49B277637E60008E0FC /* stubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stubGenerator.swift; sourceTree = "<group>"; };
 		B68BD335272C1FF400F30562 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		B68BD338272C202300F30562 /* SearchModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelView.swift; sourceTree = "<group>"; };
 		B68FA62927751FBA00ADCDB6 /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
@@ -159,11 +169,16 @@
 		B616CE0A276D5EE600CF2C47 /* My MMRTests */ = {
 			isa = PBXGroup;
 			children = (
+				B67E76FC2777CCA3007B27D1 /* Resolver */,
+				B68AE48E2776324B0008E0FC /* ViewModelTests */,
 				B616CE0B276D5EE600CF2C47 /* My_MMRTests.swift */,
-				B616CE0D276D5EE600CF2C47 /* Info.plist */,
-				B616CE15276D5F1B00CF2C47 /* AlamoFireManagerTests.swift */,
+				B68AE495277636950008E0FC /* UserDefaultTests.swift */,
+				B68AE4702775F9CB0008E0FC /* AlamoFireRequestsTests.swift */,
 				B616CE25276D62EB00CF2C47 /* Bundle+unitTest.swift */,
+				B68AE49B277637E60008E0FC /* stubGenerator.swift */,
 				B616CE1F276D628E00CF2C47 /* stub.json */,
+				B68AE47D277622780008E0FC /* stubFirstRequest.json */,
+				B616CE0D276D5EE600CF2C47 /* Info.plist */,
 			);
 			path = "My MMRTests";
 			sourceTree = "<group>";
@@ -234,6 +249,14 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		B67E76FC2777CCA3007B27D1 /* Resolver */ = {
+			isa = PBXGroup;
+			children = (
+				B67E76FD2777CD1E007B27D1 /* Resolver+XCTest.swift */,
+			);
+			path = Resolver;
+			sourceTree = "<group>";
+		};
 		B6812DA82705D378007ABF70 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +291,14 @@
 				B68072DB2774838A00D682D5 /* AlamoFireRequests.swift */,
 			);
 			path = "AlamoFire Classes";
+			sourceTree = "<group>";
+		};
+		B68AE48E2776324B0008E0FC /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				B68AE48F277632740008E0FC /* FavoritesViewModelTests.swift */,
+			);
+			name = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		B68BD334272C1F5500F30562 /* ModelViews */ = {
@@ -463,6 +494,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68AE47E277622780008E0FC /* stubFirstRequest.json in Resources */,
 				B616CE20276D628E00CF2C47 /* stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,9 +559,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B616CE16276D5F1B00CF2C47 /* AlamoFireManagerTests.swift in Sources */,
 				B616CE26276D62EB00CF2C47 /* Bundle+unitTest.swift in Sources */,
+				B68AE4712775F9CB0008E0FC /* AlamoFireRequestsTests.swift in Sources */,
+				B68AE490277632740008E0FC /* FavoritesViewModelTests.swift in Sources */,
 				B616CE0C276D5EE600CF2C47 /* My_MMRTests.swift in Sources */,
+				B68AE496277636950008E0FC /* UserDefaultTests.swift in Sources */,
+				B67E76FE2777CD1E007B27D1 /* Resolver+XCTest.swift in Sources */,
+				B68AE49C277637E60008E0FC /* stubGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

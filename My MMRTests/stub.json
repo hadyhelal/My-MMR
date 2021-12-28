@@ -1,64 +1,112 @@
 
 {
   "ranked": {
-    "avg": null,
-    "err": 99,
-    "warn": true,
-    "summary": null,
-    "closestRank": null,
-    "percentile": null,
+    "avg": 3095,
+    "err": 62,
+    "warn": false,
+    "summary": "Slightly <b>below Grandmaster</b><br><br><span class=\"symbol--micro\"></span>MMR resembles the <b>bottom 34%</b> of summoners in Grandmaster",
+    "closestRank": "Grandmaster",
+    "percentile": 34,
     "tierData": [
-      
+      {
+        "name": "Master",
+        "avg": 2922,
+        "min": 2838,
+        "max": 3065
+      },
+      {
+        "name": "Grandmaster",
+        "avg": 3166,
+        "min": 2992,
+        "max": 3384
+      },
+      {
+        "name": "Challenger",
+        "avg": 3444,
+        "min": 3360,
+        "max": 3512
+      }
     ],
-    "timestamp": null,
+    "timestamp": 1640323643,
     "historical": [
-      
+      {
+        "avg": 3111,
+        "err": 66,
+        "warn": false,
+        "timestamp": 1640304000
+      },
+      {
+        "avg": 3095,
+        "err": 70,
+        "warn": false,
+        "timestamp": 1639958400
+      },
+      {
+        "avg": 3098,
+        "err": 97,
+        "warn": false,
+        "timestamp": 1639180800
+      },
+      {
+        "avg": 3027,
+        "err": 66,
+        "warn": false,
+        "timestamp": 1638835200
+      },
+      {
+        "avg": 3092,
+        "err": 69,
+        "warn": false,
+        "timestamp": 1638662400
+      },
+      {
+        "avg": 3037,
+        "err": 73,
+        "warn": false,
+        "timestamp": 1638403200
+      },
+      {
+        "avg": 3080,
+        "err": 138,
+        "warn": false,
+        "timestamp": 1638316800
+      }
     ],
     "historicalTierData": [
-      
-    ]
-  },
-  "normal": {
-    "avg": 1607,
-    "err": 25,
-    "warn": false,
-    "closestRank": "Gold IV",
-    "percentile": 62.52,
-    "timestamp": 1639777708,
-    "historical": [
       {
-        "avg": 1593,
-        "err": 17,
-        "warn": false,
-        "timestamp": 1639699200
+        "name": "Grandmaster",
+        "avg": 3166,
+        "avgCount": 51,
+        "min": 2992,
+        "max": 3384
       },
       {
-        "avg": 1646,
-        "err": 20,
-        "warn": false,
-        "timestamp": 1639440000
-      },
-      {
-        "avg": 1624,
-        "err": 27,
-        "warn": false,
-        "timestamp": 1639094400
-      },
-      {
-        "avg": 1636,
-        "err": 11,
-        "warn": false,
-        "timestamp": 1638921600
+        "name": "Master",
+        "avg": 2922,
+        "avgCount": 51,
+        "min": 2838,
+        "max": 3065
       }
     ]
   },
-  "ARAM": {
-    "avg": 1881,
+  "normal": {
+    "avg": null,
     "err": 99,
     "warn": true,
-    "closestRank": "Silver II",
-    "percentile": 42.67,
-    "timestamp": 1639577756,
+    "closestRank": null,
+    "percentile": null,
+    "timestamp": null,
+    "historical": [
+      
+    ]
+  },
+  "ARAM": {
+    "avg": null,
+    "err": 99,
+    "warn": true,
+    "closestRank": null,
+    "percentile": null,
+    "timestamp": null,
     "historical": [
       
     ]

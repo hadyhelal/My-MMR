@@ -5,7 +5,7 @@
 //  Created by Hady Helal on 31/10/2021.
 //
 
-import UIKit
+import UIKit.UIButton
 import DropDown
 protocol DropDownProtocol {
     func handleServerSelection(_ sender: UIButton, completed: @escaping (_ server : String)-> () )

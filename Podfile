@@ -17,7 +17,7 @@ end
 
   pod 'DropDown', '2.3.13'
   pod 'LeagueAPI'
-  pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'xcode-10-2-fix'
   pod 'Resolver'
 end
 

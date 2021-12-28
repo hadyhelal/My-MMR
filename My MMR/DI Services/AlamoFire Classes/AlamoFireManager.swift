@@ -10,6 +10,7 @@
 
 import Foundation
 import Resolver
+
 class AlamoFireManager: AlamoFireManagerProtocol {
      
      @Injected var operationQueue: OperationQueue

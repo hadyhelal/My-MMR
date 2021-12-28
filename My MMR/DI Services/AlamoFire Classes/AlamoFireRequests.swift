@@ -12,7 +12,9 @@ import AlamofireObjectMapper
 
 class AlamoFireRequests: AlamoFireRequestsProtocol {
     
-     func fetchSummonerMMRData(with urlRequest: URLRequest, completed: @escaping (Swift.Result<PlayerMMR,MMRError>) -> Void) {
+    func fetchSummonerMMRData(with urlRequest: URLRequest, completed: @escaping (Swift.Result<PlayerMMR,MMRError>) -> Void) {
+
+        
           Alamofire.request(urlRequest).responseObject { (response: DataResponse<PlayerMMR>) in
                guard response.error == nil else {
                     completed(.failure(.unableToComplete))
@@ -24,11 +26,12 @@ class AlamoFireRequests: AlamoFireRequestsProtocol {
                     return
                }
                
-               guard response.response?.statusCode == 200 else {
-                    completed(.failure(.invalidResponse))
-                    return
-               }
-               
+//               guard response.response?.statusCode == 200 else {
+//                    completed(.failure(.invalidResponse))
+//                    return
+//               }
+              print("Statussssss code")
+           // print(response.response!.statusCode)
                guard let playerData = response.result.value else {
                     completed(.failure(.invalidData))
                     return

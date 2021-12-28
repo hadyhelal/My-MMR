@@ -22,7 +22,7 @@ class FavoritesViewModel {
             guard let self = self else { return }
             switch result{
             case .success(let favoritesArray):
-                self.favoritesOriginal.value      = favoritesArray
+                self.favoritesOriginal.value   = favoritesArray
                 self.favoritesSelected.value   = favoritesArray
                 self.reloadTableViewData.value = true
             case .failure(let err):
