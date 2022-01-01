@@ -17,7 +17,7 @@ class AlamoFireManager: AlamoFireManagerProtocol {
      @Injected var alamoFireRequest: AlamoFireRequestsProtocol
      
      func getUserData(playerName: String , server: String, completed: @escaping (Swift.Result<PlayerMMR , MMRError>) -> Void) {
-          guard let url = getPLayerURL(playerName: playerName, server: server) else {
+          guard let url = URLComponent.getPLayerURL(playerName: playerName, server: server) else {
                completed(.failure(.invalidUsername))
                return
           }
@@ -52,10 +52,5 @@ class AlamoFireManager: AlamoFireManagerProtocol {
           operationQueue.addOperations([firstRequest,secondRequest], waitUntilFinished: true)
      }
      
-     func getPLayerURL(playerName: String , server : String) -> URL? {
-          let urlString = "https://\(server).whatismymmr.com/api/v1/summoner?name=\(playerName)"
-          print(urlString)
-          guard let urlLink = URL(string: urlString) else { return nil }
-          return urlLink
-     }
+
 }

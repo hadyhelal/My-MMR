@@ -7,6 +7,7 @@ target 'My MMR' do
 
   # Pods for My MMR
 # the below code for setting target to satisfy the Xcode target iOS version
+
 post_install do |installer|
  installer.pods_project.targets.each do |target|
   target.build_configurations.each do |config|

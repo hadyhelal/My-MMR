@@ -10,7 +10,6 @@ import Foundation
 protocol AlamoFireManagerProtocol {
      func getUserData(playerName: String , server: String, completed: @escaping (Swift.Result<PlayerMMR , MMRError>) -> Void)
      
-     func getPLayerURL(playerName: String , server: String) -> URL?
 }
 
 protocol AlamoFireRequestsProtocol {

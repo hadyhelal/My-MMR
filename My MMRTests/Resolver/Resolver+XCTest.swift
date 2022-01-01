@@ -8,7 +8,3 @@
 import Foundation
 import Resolver
 @testable import My_MMR
-
-extension Resolver {
-    static var moc = Resolver(parent: .main)
-}

@@ -294,54 +294,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "961166F2-0AF0-4E82-B729-933815BC9E43"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My MMR/DI Services/AlamoFire Classes/AlamoFireManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getUserData(playerName:server:completed:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "961166F2-0AF0-4E82-B729-933815BC9E43 - 1027d4cae762e79f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, My_MMR.MMRError&gt;) -&gt; () in closure #1 () -&gt; () in My_MMR.AlamoFireManager.getUserData(playerName: Swift.String, server: Swift.String, completed: (Swift.Result&lt;My_MMR.PlayerMMR, My_MMR.MMRError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "My MMR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadyhelal/Desktop/My%20MMR/My%20MMR/DI%20Services/AlamoFire%20Classes/AlamoFireManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "321">
-               </Location>
-               <Location
-                  uuid = "961166F2-0AF0-4E82-B729-933815BC9E43 - 1027d4cae762e79f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, My_MMR.MMRError&gt;) -&gt; () in closure #1 () -&gt; () in My_MMR.AlamoFireManager.getUserData(playerName: Swift.String, server: Swift.String, completed: (Swift.Result&lt;My_MMR.PlayerMMR, My_MMR.MMRError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "My MMR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadyhelal/Desktop/My%20MMR/My%20MMR/DI%20Services/AlamoFire%20Classes/AlamoFireManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "349">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6284244C-62A3-4B70-9A1E-E2744FD348F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
