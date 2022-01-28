@@ -20,5 +20,6 @@ enum MMRError: String, Error {
     //this second request happens when something wrong with url name
     
     case noRecentData     = "No recent MMR data for summoner."
-    case NotRecorded      = "Summoner is not on record."
+    case notRecorded      = "Summoner is not on record."
+    case missingNamePara  = "Missing 'name' query parameter."
 }

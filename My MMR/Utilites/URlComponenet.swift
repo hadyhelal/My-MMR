@@ -16,7 +16,7 @@ class URLComponent {
          component.queryItems = [
               URLQueryItem(name: "name", value: playerName)
          ]
-         
+        print(component.url! as URL)
          return component.url
     }
     

@@ -210,7 +210,7 @@
 			children = (
 				B68FA62827751F3F00ADCDB6 /* App+Injection */,
 				B68FE3B5272EB4F100DC44D7 /* DI Services */,
-				B6812DAC2705D9A5007ABF70 /* UI Customisation */,
+				B6812DAC2705D9A5007ABF70 /* Custom UIs */,
 				B6812DA82705D378007ABF70 /* Utilites */,
 				B65AB779270525E7001DBE60 /* NetworkManager */,
 				B68BD334272C1F5500F30562 /* ModelViews */,
@@ -273,7 +273,7 @@
 			path = Utilites;
 			sourceTree = "<group>";
 		};
-		B6812DAC2705D9A5007ABF70 /* UI Customisation */ = {
+		B6812DAC2705D9A5007ABF70 /* Custom UIs */ = {
 			isa = PBXGroup;
 			children = (
 				B669609227125A9D0079D021 /* CustomCell */,
@@ -283,7 +283,7 @@
 				B6CB51422705F11E00250095 /* CustomUIView */,
 				B6CB51312705EFB600250095 /* CutomVC */,
 			);
-			path = "UI Customisation";
+			path = "Custom UIs";
 			sourceTree = "<group>";
 		};
 		B6848C132773D2E5004C53DB /* AlamoFire Classes */ = {

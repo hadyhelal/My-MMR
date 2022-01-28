@@ -5,8 +5,9 @@
 //  Created by Hady Helal on 30/09/2021.
 //
 
-import Foundation
+import UIKit
 
-enum Servers : String {
+enum Servers : String, CaseIterable {
     case EUW, EUNE, NA, KR
+
 }

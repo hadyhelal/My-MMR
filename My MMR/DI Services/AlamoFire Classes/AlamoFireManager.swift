@@ -13,7 +13,6 @@ import Resolver
 
 class AlamoFireManager: AlamoFireManagerProtocol {
      
-     @Injected var operationQueue: OperationQueue
      @Injected var alamoFireRequest: AlamoFireRequestsProtocol
      
      func getUserData(playerName: String , server: String, completed: @escaping (Swift.Result<PlayerMMR , MMRError>) -> Void) {
@@ -24,33 +23,22 @@ class AlamoFireManager: AlamoFireManagerProtocol {
           
           let urlRequest = URLRequest(url: url)
           
-          let firstRequest = BlockOperation { [weak self] in
-               self?.alamoFireRequest.checkIfSummonerNameHasData(with: urlRequest) { [weak self] result in
-                    switch result {
-                    case .success(let failedWithNoRecentData ):
-                         self?.operationQueue.cancelAllOperations()
-                         completed(.failure(MMRError(rawValue: failedWithNoRecentData)!) )
-                         return
-                    case .failure(_):
-                         break
+          alamoFireRequest.checkIfSummonerNameHasData(with: urlRequest) { [weak self] result in
+               switch result {
+               case .success(let failedWithNoRecentData ):
+                    completed(.failure(MMRError(rawValue: failedWithNoRecentData)!) )
+                    return
+               case .failure(_):
+                    self?.alamoFireRequest.fetchSummonerMMRData(with: urlRequest) { result in
+                         switch result {
+                         case .success(let playerMMR):
+                              completed(.success(playerMMR))
+                         case .failure(let error):
+                              completed(.failure(error))
+                         }
                     }
                }
           }
-          
-          let secondRequest = BlockOperation { [weak self] in
-               self?.alamoFireRequest.fetchSummonerMMRData(with: urlRequest) { result in
-                    switch result {
-                    case .success(let playerMMR):
-                         completed(.success(playerMMR))
-                    case .failure(let error):
-                         completed(.failure(error))
-                    }
-               }
-          }
-          
-          secondRequest.addDependency(firstRequest)
-          operationQueue.addOperations([firstRequest,secondRequest], waitUntilFinished: true)
      }
-     
 
 }

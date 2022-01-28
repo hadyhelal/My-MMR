@@ -12,7 +12,6 @@ extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         defaultScope = .graph
         
-        register { OperationQueue() }
         register { DropDownList() }.implements(DropDownProtocol.self)
         register { AlamoFireManager() }.implements(AlamoFireManagerProtocol.self)
         register { AlamoFireRequests() }.implements(AlamoFireRequestsProtocol.self)
